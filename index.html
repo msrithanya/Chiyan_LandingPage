@@ -4,39 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smooth Scroll Example</title>
-  <style>
-    /* Navbar styling */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #333;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Section styling */
-    section {
-      height: 100vh; /* full screen height */
-    
-      font-size: 2rem;
-    }
-
-    #home { background: lightblue; }
-    #about { background: lightgreen; }
-    #contact { background: lightcoral; }
-
-    /* Smooth scroll effect */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link href="style.css" rel="stylesheet"/>
+ 
 </head>
 <body>
   <!-- Navbar -->
@@ -48,6 +17,8 @@
 
   <!-- Sections -->
   <section id="home">Home Section</section>
+  <img src="Asserts/product-icon.svg"/>
+  <img src="Asserts/product-icon-selected.svg"/>
   <section id="about">About Section</section>
   <section id="contact">Contact Section</section>
 </body>
