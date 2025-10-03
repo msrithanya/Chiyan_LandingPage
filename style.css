@@ -2,32 +2,21 @@
   margin: 0;
   padding: 0%;
 }
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #333;
-  padding: 10px;
-}
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS:wght@100..400&display=swap');
 
 /* Section styling */
-section {
-  height: 100vh; /* full screen height */
+/* section {
+  height: 100vh; 
 
   font-size: 2rem;
 }
 
 #home {
-  background: #010101;
-  background-image: url(Ellipse\ 2.svg);
+
+  background-image: url(Asserts/Hero_bg.svg);
   background-repeat: no-repeat;
+    background-size: cover;    
 }
 #about {
   background: lightgreen;
@@ -36,7 +25,328 @@ section {
   background: lightcoral;
 }
 
-/* Smooth scroll effect */
+
 html {
   scroll-behavior: smooth;
+}
+nav {
+  position: fixed;
+  top: 24px;           
+  left: 32px;         
+  right: 32px;         
+background-color: black;
+  border-radius: 42px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+ 
+  background: rgba(255, 255, 255, 0.1);   
+  backdrop-filter: blur(10px);            
+  -webkit-backdrop-filter: blur(10px);   
+
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);  
+}
+#logo{
+  display: flex;
+   margin-left: 27px;
+}
+#logo_img{
+  width: 24px;
+  height: 24px;
+}
+#logo_name{
+  font-family: "Malibu Sunday";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+color: white;
+margin-left: 12px;
+}
+#menus{
+  margin-right: 24px;
+color: rgba(255, 255, 255, 0.60);
+  display: flex;
+}
+#menus div{
+   margin-left: 12px;
+   padding: 12px 16px;
+}
+
+#CTA{
+background-color: #0745E8;
+border-radius: 32px;
+}
+#menus p{
+ 
+  font-family: "Malibu Sunday";
+  padding: 12px 32px;
+ font-size: 16px;
+}
+#menus div:hover{
+  border-bottom: 1px solid #0745E8;
+  color: white;
+}
+
+#heading p{
+ font-family: "Malibu Sunday", sans-serif;
+ color: white;
+ margin-top: 12px;
+ font-size: 64px;
+}
+
+cta{
+   font-family: "Playwrite DE SAS", cursive;
+  color: white;
+ margin-top: 12px;
+ font-size: 64px;
+}
+#subheading p{
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.60);
+} */
+
+
+.b {
+  
+  border-radius: 30px;
+  margin-top: 6vh;
+}
+
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 16px 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.blob-btn:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #1A1A1A;
+  border-radius: 30px;
+}
+.blob-btn:after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s 0.2s;
+  border-radius: 30px;
+}
+.blob-btn:hover {
+  color: #ffffff;
+  border-radius: 30px;
+}
+.blob-btn:hover:after {
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+.blob-btn__inner {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  
+}
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url("#goo");
+}
+.blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #0505a9;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+@supports (filter: url("#goo")) {
+  .blob-btn__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  transition-delay: 0.08s;
+}
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  transition-delay: 0.16s;
+}
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  transition-delay: 0.24s;
+}
+.blob-btn:hover .blob-btn__blob {
+  transform: translateZ(0) scale(1.7);
+}
+@supports (filter: url("#goo")) {
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
+ul{
+  --d:10s;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+   overflow: hidden;
+-webkit-mask: linear-gradient(90deg, #0000, #000 5% 95%, #0000);
+
+margin: 0;
+padding: 0;
+
+list-style: none;
+
+}
+ul{
+  margin-top: 24px;
+}
+ul>li{
+grid-area: 1/1;
+animation: r var(--d) linear Infinite;
+padding: 12px 24px;
+}
+
+ul > li img {
+  width: 100px;  /* Adjust the value to your desired size */
+  height: auto;  /* Maintain the aspect ratio */
+}
+ul>li:nth-child(2){
+animation-delay: calc(-0.1428571429*var(--d));
+}
+ul>li:nth-child(3){
+animation-delay: calc(-0.2857142857*var(--d));
+}
+ul>li:nth-child(4){
+animation-delay: calc(-0.4285714286*var(--d));
+}
+ul>li:nth-child(5){
+animation-delay: calc(-0.5714285714*var(--d));
+}
+ul>li:nth-child(6){
+animation-delay: calc(-0.7142857141*var(--d));
+}
+ul>li:nth-child(7){
+animation-delay: calc(-0.8571428571*var(--d));
+}
+
+
+@keyframes r {
+  14.2857142857%{
+transform: translate(-100%);
+  }
+   14.2957142857%{
+transform: translate(600%);
+  }
+} 
+ul.alt li{
+animation-direction: reverse;
+}
+.wrapper {
+  
+  width: 36%;
+  height: 30vh;
+  border: 1px solid white;
+  border-radius: 32px;
+  width: 30%;
+  max-width: 1536px;
+
+  position: relative;
+  height: 100px;
+
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+.item {
+  width: 28%;
+  height: 40%;
+ margin-top: 3vh;
+  border-radius: 6px;
+  position: absolute;
+  left: max(calc(120px * 8), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.item1 {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.item7 {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.item8 {
+  animation-delay: calc(30s / 8 * (8 - 8) * -1);
 }

@@ -4,22 +4,139 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smooth Scroll Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Malibu Sunday -->
+  <link href="https://db.onlinewebfonts.com/c/06981ce077f50507c144a35e8de65210?family=Malibu+Sunday+Serif" rel="stylesheet">
+  <!-- Extra font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet"/>
- 
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .malibu {
+      font-family: "Malibu Sunday", serif;
+    }
+    .playwrite {
+      font-family: "Playwrite DE SAS", cursive;
+    }
+  </style>
 </head>
-<body>
+<body class="m-0 p-0">
+
   <!-- Navbar -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+  <nav class="fixed top-6 left-8 right-8 flex items-center justify-between bg-black rounded-[42px] py-3 px-6 z-50">
+    
+    <!-- Logo -->
+    <div class="flex items-center ml-6">
+      <img src="Asserts/Logo.svg" alt="Logo" class="w-6 h-6">
+      <p class="malibu text-white text-xl ml-3">CHIYAN</p>
+    </div>
+
+    <!-- Menus -->
+    <div class="flex items-center mr-6 text-white/60">
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer">
+        <p class="malibu text-base px-4 py-2">About Us</p>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer">
+        <p class="malibu text-base px-4 py-2">Service</p>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer">
+        <p class="malibu text-base px-4 py-2">Blog</p>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer">
+        <p class="malibu text-base px-4 py-2">Testimonials</p>
+      </div>
+      <div class="ml-3 bg-[#0745E8] rounded-[32px] cursor-pointer">
+        <p class="malibu text-base px-8 py-3">Contact Us</p>
+      </div>
+    </div>
   </nav>
 
   <!-- Sections -->
-  <section id="home">Home Section</section>
-  <img src="Asserts/product-icon.svg"/>
-  <img src="Asserts/product-icon-selected.svg"/>
-  <section id="about">About Section</section>
-  <section id="contact">Contact Section</section>
+  <section id="home" class="relative h-screen bg-cover bg-no-repeat" style="background-image: url('Asserts/Hero_bg.svg');">
+    <div id="home_content" class="absolute ml-[48px] mr-[64px] mt-[18vh]">
+      <div class="flex justify-between" id="Upper_section">
+        
+        <!-- Heading -->
+        <div id="heading" class="malibu text-white text-6xl mt-3 leading-tight">
+          <p>Creative Web,</p>
+          <p>Mobile Power for</p>
+          <p class="playwrite text-white text-6xl mt-3">You</p>
+        </div>
+
+        <!-- Subheading -->
+        <div id="subheading" class="mt-4 w-2/5 text-base text-white/60">
+          <p>
+            Welcome to Chiyan Software Solutions Pvt Ltd. At Chiyan Software Solutions, 
+            we empower businesses and individuals with innovative software solutions, 
+            leveraging cutting-edge technologies to streamline operations, 
+            enhance productivity, and unlock growth potential.
+          </p>
+        <!-- <div class="btn-border">
+        <p  class="malibu text-base px-8 py-3">Contact Us</p>
+      </div> -->
+       <div class="b">
+        <button class="blob-btn">
+          Contact Us
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </button>
+        <br/>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+        </div>
+      </div>
+
+      <div id="lower_section" class="flex justify-between ">
+      <!-- <div id="marque" class="w-[36%] h-[20vh] border-[1px] rounded-[32px] flex flex-col justify-between items-center">
+        <ul ><li><img  src="Asserts/Amazon.svg"></li>
+        <li><img src="Asserts/McDonald's.svg"></li>
+        <li  ><img src="Asserts/Nike.svg"></li>
+        <li><img src="Asserts/Walmart.svg"></li>
+        </ul>
+        <ul class="alt mb-[32px]"><li><img src="Asserts/Amazon.svg"></li>
+        <li><img src="Asserts/McDonald's.svg"></li>
+        <li><img src="Asserts/Nike.svg"></li>
+        <li><img src="Asserts/Walmart.svg"></li>
+        </ul>
+      </div> -->
+      <div class="wrapper">
+  <div class="item item1"><img src="Asserts/Amazon.svg"/></div>
+  <div class="item item2"><img src="Asserts/Walmart.svg"/></div>
+  <div class="item item3"><img src="Asserts/McDonald's.svg"/></div>
+<div class="item item4"><img src="Asserts/Amazon.svg"/></div>
+  <div class="item item5"><img src="Asserts/Walmart.svg"/></div>
+  <div class="item item6"><img src="Asserts/McDonald's.svg"/></div>
+  <div class="item item7"><img src="Asserts/Amazon.svg"/></div>
+    <div class="item item8"><img src="Asserts/McDonald's.svg"/></div>
+</div>
+        <div  id="counts" class="w-[30%]"></div>
+      </div>
+    </div>
+  </section>
+
+  <img src="Asserts/product-icon.svg" alt="product-icon"/>
+  <img src="Asserts/product-icon-selected.svg" alt="product-icon-selected"/>
+
+  <section id="about" class="h-screen bg-green-300"></section>
+  <section id="contact" class="h-screen bg-red-300"></section>
+
 </body>
 </html>
