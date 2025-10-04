@@ -11,6 +11,8 @@
   <!-- Extra font -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet"/>
+   <script src="script.js"></script>
+   <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -56,9 +58,8 @@
 
   <!-- Sections -->
   <section id="home" class="relative h-screen bg-cover bg-no-repeat" style="background-image: url('Asserts/Hero_bg.svg');">
-    <div id="home_content" class="absolute ml-[48px] mr-[64px] mt-[18vh]">
+    <div id="home_content" class="absolute ml-[48px] mr-[48px] mt-[18vh]">
       <div class="flex justify-between" id="Upper_section">
-        
         <!-- Heading -->
         <div id="heading" class="malibu text-white text-6xl mt-3 leading-tight">
           <p>Creative Web,</p>
@@ -103,40 +104,181 @@
     </div>
         </div>
       </div>
-
-      <div id="lower_section" class="flex justify-between ">
-      <!-- <div id="marque" class="w-[36%] h-[20vh] border-[1px] rounded-[32px] flex flex-col justify-between items-center">
-        <ul ><li><img  src="Asserts/Amazon.svg"></li>
-        <li><img src="Asserts/McDonald's.svg"></li>
-        <li  ><img src="Asserts/Nike.svg"></li>
-        <li><img src="Asserts/Walmart.svg"></li>
-        </ul>
-        <ul class="alt mb-[32px]"><li><img src="Asserts/Amazon.svg"></li>
-        <li><img src="Asserts/McDonald's.svg"></li>
-        <li><img src="Asserts/Nike.svg"></li>
-        <li><img src="Asserts/Walmart.svg"></li>
-        </ul>
-      </div> -->
-      <div class="wrapper">
-  <div class="item item1"><img src="Asserts/Amazon.svg"/></div>
-  <div class="item item2"><img src="Asserts/Walmart.svg"/></div>
-  <div class="item item3"><img src="Asserts/McDonald's.svg"/></div>
-<div class="item item4"><img src="Asserts/Amazon.svg"/></div>
-  <div class="item item5"><img src="Asserts/Walmart.svg"/></div>
-  <div class="item item6"><img src="Asserts/McDonald's.svg"/></div>
-  <div class="item item7"><img src="Asserts/Amazon.svg"/></div>
-    <div class="item item8"><img src="Asserts/McDonald's.svg"/></div>
+ 
+      <div id="lower_section"  class="flex justify-between mr-[48px]  ">
+      <div class="wrapper_container mt-[2vh]">
+        <div class="wrapper">
+<div class="itemleft item1"><img src="Asserts/Amazon.svg"/></div>
+  <div class="itemleft item2"><img src="Asserts/Walmart.svg"/></div>
+  <div class="itemleft item3"><img src="Asserts/McDonald's.svg"/></div>
+<div class="itemleft item4"><img src="Asserts/Amazon.svg"/></div>
+  <div class="itemleft item5"><img src="Asserts/Walmart.svg"/></div>
+  <div class="itemleft item6"><img src="Asserts/McDonald's.svg"/></div>
+  <div class="itemleft item7"><img src="Asserts/Amazon.svg"/></div>
+    <div class="itemleft item8"><img src="Asserts/McDonald's.svg"/></div>
+        </div>
+        <div class="wrapper">
+<div class="itemright item1"><img src="Asserts/Amazon.svg"/></div>
+  <div class="itemright item2"><img src="Asserts/Walmart.svg"/></div>
+  <div class="itemright item3"><img src="Asserts/McDonald's.svg"/></div>
+<div class="itemright item4"><img src="Asserts/Amazon.svg"/></div>
+  <div class="itemright item5"><img src="Asserts/Walmart.svg"/></div>
+  <div class="itemright item6"><img src="Asserts/McDonald's.svg"/></div>
+  <div class="itemright item7"><img src="Asserts/Amazon.svg"/></div>
+    <div class="itemright item8"><img src="Asserts/McDonald's.svg"/></div>
+        </div>
 </div>
-        <div  id="counts" class="w-[30%]"></div>
+        <div id="counts" class="w-[36%] mt-[8px]">
+  <div class="border-[1px] border-[rgba(255,255,255,0.50)] mb-6"></div>
+
+  <div  class="flex ">
+    <!-- First count -->
+    <div class="w-fit">
+      <p class="text-white  text-[5vw] font-bold counter" data-target="15">0</p>
+      <p class="text-white/80 ml-[12px]  text-[24px]">Years of</p>
+      <p class="text-white/80 ml-[12px]  text-[24px]">innovation</p>
+    </div>
+
+    <!-- Second count -->
+    <div class="w-fit ml-[8vw]">
+      <p class="text-white text-[5vw] font-bold counter" data-target="100">0</p>
+      <p class="text-white/80 ml-[12px] text-[24px]">Clients and</p>
+      <p class="text-white/80 ml-[12px] text-[24px]">Growing</p>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </section>
 
-  <img src="Asserts/product-icon.svg" alt="product-icon"/>
-  <img src="Asserts/product-icon-selected.svg" alt="product-icon-selected"/>
+  <section id="about" class="h-screen bg-w hite ml-[48px] mt-[12vh] mr-[48px] relative">
+    <div class="flex justify-between w-[100%] ">
+     <div id="About_Title">
+      <p class="text-[#0745E8] text-[20px]">About CHIYAN</p>
+      <p class="mt-[4px] text-[28px]">The Heart of Chiyan</p>
+     </div>
+     <div class="w-[46%]">
+      <p class="text-[20px]" >Chiyan Software Solutions Pvt Ltd delivers secure, scalable, and innovative software solutions. Our expert team drives impact and builds lasting client relationships through exceptional value and service.</p>
+      <div class="bw">
+        <button class="blob-btn blob-btn_w text-black">
+          Know More
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </button>
+        <br/>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    </div>
+    </div>
+    <div class="flex absolute top-[32vh] w-[100%] h-[40%] justify-center">
+  <div class="w-[420px] h-[420px] border-[2px] rounded-[50%] flex justify-center items-center animated-circle">
+    <div class="flex flex-col items-center">
+      <img class="w-[50px] h-[50px]" src="/Asserts/product-icon.svg"/>
+      <div class="flex flex-col items-center text-center mt-[3vh]">
+        <p class="w-fit text-[28px] text-[rgba(0,0,0,0.50)]">Product</p>
+        <p class="text-[28px] text-[rgba(0,0,0,0.50)]">Development</p>
+      </div>
+    </div>
+  </div>
 
-  <section id="about" class="h-screen bg-green-300"></section>
-  <section id="contact" class="h-screen bg-red-300"></section>
+  <div class="w-[420px] h-[420px] border-[2px] rounded-[50%] flex justify-center items-center ml-[-24px] animated-circle">
+    <div class="flex flex-col items-center">
+      <img class="icon-default w-[50px] h-[50px]" src="/Asserts/product-icon.svg" alt="default" />
+      <img class="icon-hover w-[50px] h-[50px]" src="/Asserts/product-icon-selected.svg" alt="blue" />
+
+      <!-- Text -->
+      <div class="flex flex-col items-center text-center mt-[3vh]">
+        <p class="text-item text-[28px] text-[rgba(0,0,0,0.5)]">Product</p>
+        <p class="text-item text-[28px] text-[rgba(0,0,0,0.5)]">Development</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-[420px] h-[420px] border-[2px] rounded-[50%] flex justify-center items-center ml-[-24px] animated-circle">
+    <div class="flex flex-col items-center">
+      <img class="w-[50px] h-[50px]" src="/Asserts/product-icon.svg"/>
+      <div class="flex flex-col items-center text-center mt-[3vh]">
+        <p class="w-fit text-[28px] text-[rgba(0,0,0,0.50)]">Product</p>
+        <p class="text-[28px] text-[rgba(0,0,0,0.50)]">Development</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+  <section id="service" class="h-[120vh] bg-white  ml-[48px]">
+<div id="service_Title">
+      <p class="text-[#0745E8] text-[20px]">Services</p>
+      <p class="mt-[4px] text-[28px]">Solutions We Provide</p>
+     </div>
+<section class="relative w-full h-[100%] bg-white py-20">
+  <!-- Center vertical line -->
+  <div class="absolute left-1/2 top-0 h-full w-[3px] bg-gray-300 transform -translate-x-1/2"></div>
+
+  <!-- Timeline item LEFT -->
+  <div class="timeline-item flex justify-between items-start fadeUp">
+    <div class="timeline-img w-1/2 flex justify-end pr-16">
+      <img src="Asserts/Innovation.svg" alt="Team Working" class="w-[300px] rounded-xl shadow-lg">
+    </div>
+
+    <div class="timeline-content w-1/2 pl-16">
+       <h2 class="text-blue-600 text-[24px] font-semibold w-[80%]">Innovative Solutions for Smarter Management</h2>
+      <p class="text-gray-600 mt-2 w-[80%]">Innovative software products, including FinPort, our stock market management solution.</p>
+    </div>
+  </div>
+
+  <!-- Timeline item RIGHT -->
+  <div class="timeline-item flex justify-between items-start mt-[18vh] fadeUp">
+    <div class="timeline-content w-1/2  text-right pr-16">
+<h2 class="text-blue-600 text-[24px] font-semibold w-[80%] ml-auto text-right">
+  End-to-End IT Services for Modern Businesses
+</h2>
+
+      <p class="text-gray-600 mt-2 text-[16px] w-[80%] ml-auto ">Comprehensive IT services, such as custom development, cloud migration, and maintenance.</p>
+    </div>
+
+    <div class="timeline-img w-1/2 flex justify-start pl-16">
+      <img src="Asserts/IT-service.svg" alt="Award Celebration" class="w-[300px] rounded-xl shadow-lg">
+    </div>
+  </div>
+   <!-- <div class="timeline-item flex justify-between items-start mt-[14vh] fadeUp">
+    <div class="timeline-img w-1/2 flex justify-end pr-16">
+      <img src="Asserts/software.svg" alt="Team Working" class="w-[300px] rounded-xl shadow-lg">
+    </div>
+
+    <div class="timeline-content w-1/2 pl-16">
+       <h2 class="text-blue-600 text-[24px] font-semibold w-[80%]">Custom Software Solutions</h2>
+      <p class="text-gray-600 mt-2 w-[80%]">Empowering the next generation through our College Integral Program. Explore, Transform, Thrive.</p>
+    </div>
+  </div> -->
+    <div class="timeline-item flex justify-between items-start mt-[18vh]  fadeUp">
+    <div class="timeline-img w-1/2 flex justify-end pr-16">
+      <img src="Asserts/Innovation.svg" alt="Team Working" class="w-[300px] rounded-xl shadow-lg">
+    </div>
+
+    <div class="timeline-content w-1/2 pl-16">
+       <h2 class="text-blue-600 text-[24px] font-semibold w-[80%]">Innovative Solutions for Smarter Management</h2>
+      <p class="text-gray-600 mt-2 w-[80%]">Innovative software products, including FinPort, our stock market management solution.</p>
+    </div>
+  </div>
+</section>
+  </section>
 
 </body>
 </html>
+<section class="timeline-section">
+
