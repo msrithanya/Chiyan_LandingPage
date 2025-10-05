@@ -18,3 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCount();
     });
   });
+
+
+////////////////////////////////////
+////////////////////////////////////
+let models=document.querySelector('.outer_wrapper');
+models.addEventListener('wheel',(evnt)=>{
+  evnt.preventDefault();
+  models.scrollLeft+=evnt.deltaY
+});
+

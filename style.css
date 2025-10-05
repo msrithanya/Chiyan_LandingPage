@@ -109,8 +109,34 @@ cta{
   color: rgba(255, 255, 255, 0.60);
 } */
 
- 
+ .cursor, .hand {
+    position: fixed;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform .1s;
+}
 
+.cursor {
+    background: black;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 999;
+}
+
+.hand {
+    
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    z-index: 9999;
+    display: grid;
+    place-content: center;
+    transform: rotate(45deg);
+    opacity: 0;
+    
+}
 .b {
   
   border-radius: 30px;
@@ -367,5 +393,116 @@ cta{
   to{
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+.image-scroll{
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+}
+/* .blog{
+  width: 40%;
+  height: 40%;
+} */
+/* .inner{
+  display: flex;
+  flex-direction: row;
+   width: 200vw;
+   height: 100%;
+   transform: rotate(90deg) translateY(-80vh);
+transform-origin: top left;
+gap: 24px;
+}
+.outer_wrapper {
+width: 80vh;
+height: 100vw;
+transform: rotate(-90deg) translateX(-100vh);
+transform-origin: top left;
+overflow-y: scroll;
+overflow-x: hidden;
+position: absolute;
+top: -50px;
+}
+
+.slide{
+  margin-bottom: 12vh;
+  width:60vw;
+  height:90vh
+  
+}
+::-webkit-scrollbar{
+  display: none;
+} */
+ .inner {
+  display: flex;
+  flex-direction: row;
+  width: 200vw;
+  height: 100%;
+  transform: rotate(90deg) translateY(-80vh);
+  transform-origin: top left;
+  gap: 24px;
+}
+
+.outer_wrapper {
+  width: 80vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: -50px;
+   
+}
+
+.slide {
+  display: block;           /* important for <a> */
+  flex-shrink: 0;           /* prevent shrinking */
+  width: 60vw;
+  height: 90vh;
+ padding-bottom: 2vh;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+/* Hide default cursor inside outer_wrapper */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 16vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.marquee-content {
+  display: inline-flex;
+  
+  animation: scroll 20s linear infinite;
+}
+
+.marquee-content img {
+  
+  margin-right: 40px;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
