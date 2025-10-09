@@ -61,7 +61,6 @@
       </div>
     </div>
   </nav>
-  <header id="home" class="relative h-screen bg-cover bg-no-repeat" style="background-image: url('Asserts/Hero_bg.svg');">
     <div id="home_content" class="absolute ml-[48px] mr-[48px] mt-[18vh]">
       <div class="flex justify-between" id="Upper_section">
         <!-- Heading -->
@@ -131,14 +130,12 @@
   <div class="border-[1px] border-[rgba(255,255,255,0.50)] mb-6"></div>
 
   <div  class="flex ">
-    <!-- First count -->
     <div class="w-fit">
       <p class="text-white  text-[5vw] font-bold counter" data-target="15">0</p>
       <p class="text-white/80 ml-[12px]  text-[24px]">Years of</p>
       <p class="text-white/80 ml-[12px]  text-[24px]">innovation</p>
     </div>
 
-    <!-- Second count -->
     <div class="w-fit ml-[8vw]">
       <p class="text-white text-[5vw] font-bold counter" data-target="100">0</p>
       <p class="text-white/80 ml-[12px] text-[24px]">Clients and</p>
@@ -148,15 +145,111 @@
 </div>
       </div>
     </div>
-  </header>
-  <section id="about" class="h-screen bg-w hite ml-[48px] mt-[12vh] mr-[48px] relative">
-    <div class="flex justify-between w-[100%] ">
+  </header> -->
+ <header id="home" class="relative min-h-screen bg-cover bg-no-repeat" style="background-image: url('Asserts/Hero_bg.svg');">
+  <div id="home_content" class="absolute inset-0 px-6 md:px-12 lg:ml-[48px] lg:mr-[48px] mt-[12vh] md:mt-[16vh] ">
+    <!-- Upper Section -->
+    <div class="flex flex-col lg:flex-row justify-between gap-8" id="Upper_section">
+      
+      <!-- Heading -->
+      <div id="heading" class="malibu text-white text-4xl sm:text-5xl xl:text-6xl md:text-5xl mt-3 leading-tight">
+        <p>Creative Web,</p>
+        <p class="mt-[2vh]">Mobile Power for</p>
+        <p class="playwrite text-white text-4xl sm:text-5xl xl:text-6xl md:text-5xl mt-3">You</p>
+      </div>
+
+      <!-- Subheading -->
+      <div id="subheading" class="mt-6 lg:mt-4 lg:w-2/5  text-sm sm:text-base text-white/70">
+        <p>
+          Welcome to Chiyan Software Solutions Pvt Ltd. At Chiyan Software Solutions, 
+          we empower businesses and individuals with innovative software solutions, 
+          leveraging cutting-edge technologies to streamline operations, 
+          enhance productivity, and unlock growth potential.
+        </p>
+
+        <div class="b mt-6">
+          <button class="blob-btn text-sm sm:text-base">
+            Contact Us
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="hidden">
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lower Section -->
+    <div id="lower_section" class="flex flex-col lg:flex-row justify-between items-center lg:items-start mt-20 xl:mt-[20vh] gap-9">
+      
+      <!-- Logo Marquee -->
+   <div class="wrapper_container">
+  <div class="wrapper">
+    <div class="itemleft item1"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemleft item2"><img src="Asserts/Walmart.svg" /></div>
+    <div class="itemleft item3"><img src="Asserts/McDonald's.svg" /></div>
+    <div class="itemleft item4"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemleft item5"><img src="Asserts/Walmart.svg" /></div>
+    <div class="itemleft item6"><img src="Asserts/McDonald's.svg" /></div>
+    <div class="itemleft item7"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemleft item8"><img src="Asserts/McDonald's.svg" /></div>
+  </div>
+  <div class="wrapper ">
+    <div class="itemright item1"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemright item2"><img src="Asserts/Walmart.svg" /></div>
+    <div class="itemright item3"><img src="Asserts/McDonald's.svg" /></div>
+    <div class="itemright item4"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemright item5"><img src="Asserts/Walmart.svg" /></div>
+    <div class="itemright item6"><img src="Asserts/McDonald's.svg" /></div>
+    <div class="itemright item7"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemright item8"><img src="Asserts/McDonald's.svg" /></div>
+  </div>
+</div>
+      <!-- Counters -->
+      <div id="counts" class="w-full lg:w-[40%] text-center lg:text-left">
+        <div class="border-t border-white/50 mb-6"></div>
+        <div class="flex justify-around lg:justify-start lg:gap-[8vw]">
+          
+          <!-- First Count -->
+          <div>
+            <p class="text-white text-[12vw] sm:text-[8vw] md:text-[5vw] font-bold counter" data-target="15">0</p>
+            <p class="text-white/80 text-base md:text-[24px] leading-tight">Years of</p>
+            <p class="text-white/80 text-base md:text-[24px] leading-tight">Innovation</p>
+          </div>
+
+          <!-- Second Count -->
+          <div>
+            <p class="text-white text-[12vw] sm:text-[8vw] md:text-[5vw] font-bold counter" data-target="100">0</p>
+            <p class="text-white/80 text-base md:text-[24px] leading-tight">Clients and</p>
+            <p class="text-white/80 text-base md:text-[24px] leading-tight">Growing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <section id="about" class="lg:h-screen md:h-[3%] bg-w hite ml-[48px] mt-[12vh] mr-[48px] relative ">
+    <div class="lg:flex  justify-between w-[100%] ">
      <div id="About_Title">
       <p class="text-[#0745E8] text-[20px]">About CHIYAN</p>
       <p class="mt-[4px] text-[28px]">The Heart of Chiyan</p>
      </div>
-     <div class="w-[46%]">
-      <p class="text-[20px]" >Chiyan Software Solutions Pvt Ltd delivers secure, scalable, and innovative software solutions. Our expert team drives impact and builds lasting client relationships through exceptional value and service.</p>
+     <div class="lg:w-[46%] md:mt-[8vh] lg:mt-[0]">
+      <p class="text-[20px]">Chiyan Software Solutions Pvt Ltd delivers secure, scalable, and innovative software solutions. Our expert team drives impact and builds lasting client relationships through exceptional value and service.</p>
       <div class="bw">
         <button class="blob-btn blob-btn_w text-black">
           Know More
@@ -183,42 +276,98 @@
     </div>
     </div>
     </div>
-    <div class="flex absolute top-[32vh] w-[100%] h-[40%] justify-center">
-  <div class="w-[420px] h-[420px] border-[2px] rounded-[50%] flex justify-center items-center animated-circle">
+    
+<div
+  class="lg:flex   flex-wrap justify-center items-center absolute xl:top-[32vh] lg:mt-[-16vh] xl:mt-[0] w-full h-auto md:hidden "
+>
+  <!-- Circle 1 -->
+  <div
+    class=" lg:w-[300px] lg:h-[300px] xl:w-[420px] xl:h-[420px] border-[2px] rounded-full flex justify-center items-center animated-circle"
+  >
     <div class="flex flex-col items-center">
-      <img class="w-[50px] h-[50px]" src="/Asserts/product-icon.svg"/>
+      <img
+        class="icon-default w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/product-icon.svg"
+        alt="default"
+      />
+      <img
+        class="icon-hover w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/product-icon-selected.svg"
+        alt="blue"
+      />
       <div class="flex flex-col items-center text-center mt-[3vh]">
-        <p class="w-fit text-[28px] text-[rgba(0,0,0,0.50)]">Product</p>
-        <p class="text-[28px] text-[rgba(0,0,0,0.50)]">Development</p>
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Product
+        </p>
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Development
+        </p>
       </div>
     </div>
   </div>
 
-  <div class="w-[420px] h-[420px] border-[2px] rounded-[50%] flex justify-center items-center ml-[-24px] animated-circle">
+  <!-- Circle 2 -->
+  <div
+    class="lg:w-[300px] lg:h-[300px] xl:ml-[-24px] xl:w-[420px] xl:h-[420px] border-[2px] rounded-full flex justify-center items-center animated-circle"
+  >
     <div class="flex flex-col items-center">
-      <img class="icon-default w-[50px] h-[50px]" src="/Asserts/product-icon.svg" alt="default" />
-      <img class="icon-hover w-[50px] h-[50px]" src="/Asserts/product-icon-selected.svg" alt="blue" />
-
-      <!-- Text -->
+      <img
+        class="icon-default w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/service_logo_nonselect.svg"
+        alt="default"
+      />
+      <img
+        class="icon-hover w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/service_logo.svg"
+        alt="blue"
+      />
       <div class="flex flex-col items-center text-center mt-[3vh]">
-        <p class="text-item text-[28px] text-[rgba(0,0,0,0.5)]">Product</p>
-        <p class="text-item text-[28px] text-[rgba(0,0,0,0.5)]">Development</p>
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Service
+        </p>
       </div>
     </div>
   </div>
 
-  <div class="w-[420px] h-[420px] border-[2px] rounded-[50%] flex justify-center items-center ml-[-24px] animated-circle">
+  <!-- Circle 3 -->
+  <div
+    class="lg:w-[300px] lg:h-[300px] xl:ml-[-24px] xl:w-[420px] xl:h-[420px] border-[2px] rounded-full flex justify-center items-center animated-circle"
+  >
     <div class="flex flex-col items-center">
-      <img class="w-[50px] h-[50px]" src="/Asserts/product-icon.svg"/>
+      <img
+        class="icon-default w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/Edu_logo_nonselect.svg"
+        alt="default"
+      />
+      <img
+        class="icon-hover w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/Edu_logo.svg"
+        alt="blue"
+      />
       <div class="flex flex-col items-center text-center mt-[3vh]">
-        <p class="w-fit text-[28px] text-[rgba(0,0,0,0.50)]">Product</p>
-        <p class="text-[28px] text-[rgba(0,0,0,0.50)]">Development</p>
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Education and
+        </p>
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Empowerment
+        </p>
       </div>
     </div>
   </div>
 </div>
+
   </section>
-  <section id="service" class="h-[120vh] bg-white  ml-[48px]">
+  <section id="service" class="h-[120vh] bg-white  ml-[48px] md:mt-[-10vh] lg:mt-[0] ">
 <div id="service_Title">
       <p class="text-[#0745E8] text-[20px]">Services</p>
       <p class="mt-[4px] text-[28px]">Solutions We Provide</p>
@@ -265,10 +414,10 @@
   </div>
 </section>
   </section>
-  <section class="blog h-screen bg-white ml-[48px] mt-[24vh] mr-[48px] w-[100%] relative">
+  <section class="blog h-screen bg-white mt-[24vh]  w-[98%] relative">
   <div id="blog_Title">
-    <p class="text-[#0745E8] text-[20px]">Blogs</p>
-    <p class="mt-[4px] text-[28px]">Innovative Thoughts</p>
+    <p class="text-[#0745E8] text-[20px] ml-[48px]">Blogs</p>
+    <p class="mt-[4px] text-[28px] ml-[48px]">Innovative Thoughts</p>
   </div>
 
   <div class="outer_wrapper">
@@ -300,38 +449,74 @@
       </div>
     </div>
   </div>
-
-
 </section>
-<section class="testimonials h-[74vh] bg-w hite ml-[48px]  mr-[48px] ">
-<div id="testimonials_Title">
+<section class="testimonials h-[74vh] bg-white ml-[48px] mr-[48px]">
+  <div id="testimonials_Title">
     <p class="text-[#0745E8] text-[20px]">Testimonials</p>
     <p class="mt-[4px] text-[28px]">Client Voices</p>
   </div>
-  <div class="flex items-center justify-center mt-[-8vh] w-[100%] h-[76%]">
-     <div class="w-[60%] h-[100%]">
-        <div class="flex justify-between">
-          <img class="mt-[20vh] w-[40px]" src="Asserts/Image-1.svg"/>
-           
-             <img class="w-[100px]" src="Asserts/Image-2.svg"/>
-              <img class="mt-[20vh]" src="Asserts/Image-3.svg"/>
+  <div class="flex items-center justify-center mt-[6vh] w-[100%] h-[76%]">
+    <div class="xl:w-[60%] lg:w-[80%] h-[100%]">
+      <div class="flex justify-between">
+        <div class="person-avatar flex justify-center items-center w-[70px] h-[70px] rounded-full bg-[#E6EEFF] animate-pulseSlow"
+             data-testimonial-id="t1">
+          <img class="w-[40px]" src="Asserts/Image-1.svg" alt="Person 1" />
         </div>
-        <div class="flex items-center flex-col w-[100%] mt-[5vh]">
-          <p class="font-semibold text-[20px]">The biggest challenge was reaching the right buyers, </p>
-          <p class="font-semibold text-[20px]">After joining Chiyan, everything changed.</p>
+
+        <div class="person-avatar selected flex justify-center items-center w-[100px] h-[100px] rounded-full bg-[#0745E8] mt-[8vh]"
+             data-testimonial-id="t2">
+          <img class="w-[85px]" src="Asserts/Image-2.svg" alt="Person 2" />
         </div>
-        <div class="flex justify-end w-[80%] mt-[2vh]">
-             <p class="text-[18px]" >-Ragul</p>
+
+        <div class="person-avatar flex justify-center items-center w-[70px] h-[70px] rounded-full bg-[#E6FFF0] animate-pulseSlow mb-[10vh]"
+             data-testimonial-id="t3">
+          <img class="w-[40px]" src="Asserts/Image-3.svg" alt="Person 3" />
         </div>
-      <div class="flex justify-between mt-[-8vh]">
-           <img   src="Asserts/Image-4.svg"/>
-           <img class="mt-[28vh]" src="Asserts/Image-3.svg"/>
-              <img class="w-[40px]"  src="Asserts/Image-2.svg"/>
-               <img class="mt-[14vh]" src="Asserts/Image-1.svg"/>
+      </div>
+
+      <div class="flex items-center flex-col w-[100%] mt-[5vh]">
+        <p id="testimonial-quote-line-1" class="font-semibold text-[20px]">The biggest challenge was reaching the right buyers,</p>
+        <p id="testimonial-quote-line-2" class="font-semibold text-[20px]">After joining Chiyan, everything changed.</p>
+      </div>
+
+      <div class="flex justify-end w-[80%] mt-[2vh]">
+        <p id="testimonial-name" class="text-[18px]">-Ragul</p>
+      </div>
+
+      <div class="relative flex justify-between items-center mt-[5vh]">
+        <div class="p-3 rounded-full bg-[#FFF3E6] animate-pulseSlow">
+          <img src="Asserts/Image-4.svg" />
         </div>
-     </div>
+        <div class="p-3 rounded-full bg-[#E6FFF9] animate-pulseSlow relative top-[12vh]">
+          <img src="Asserts/Image-3.svg" />
+        </div>
+        <div class="p-3 rounded-full bg-[#F0E6FF] animate-pulseSlow">
+          <img class="w-[40px]" src="Asserts/Image-2.svg" />
+        </div>
+        <div class="p-3 rounded-full bg-[#E6F7FF] animate-pulseSlow relative top-[6vh]">
+          <img src="Asserts/Image-1.svg" />
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+<style>
+@keyframes pulseSlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulseSlow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+</style>
+
 <section class="h-screen bg-black mt-[20vh]">
 <div class="marquee">
   <div class="marquee-content">
@@ -376,7 +561,8 @@
       </div>
     </div>
 </div>
-<footer class="mt-[8vh] bg-black text-white py-10 px-16 flex justify-between">
+<div class="border-[1px] border-dashed border-white"></div>
+<footer class=" bg-black text-white py-10 px-16 flex justify-between">
   <!-- Left Section -->
   <div class="flex flex-col max-w-lg">
     <div class="mb-4">
