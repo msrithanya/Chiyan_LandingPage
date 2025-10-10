@@ -534,8 +534,6 @@ cta{
 .slide {
   display: block;           /* important for <a> */
   flex-shrink: 0;           /* prevent shrinking */
-  width: 60vw;
-  height: 90vh;
  padding-bottom: 2vh;
 }
 
