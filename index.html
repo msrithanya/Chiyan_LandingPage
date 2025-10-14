@@ -1,54 +1,900 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smooth Scroll Example</title>
+  <title>Chiyan</title>
+    <link rel="icon" href="Asserts/Logo.svg" >
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Malibu Sunday -->
+
+  <link href="https://db.onlinewebfonts.com/c/06981ce077f50507c144a35e8de65210?family=Malibu+Sunday+Serif" rel="stylesheet">
+  <!-- Extra font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+   <script src="script.js"></script>
+   <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
   <style>
-    /* Navbar styling */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #333;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Section styling */
-    section {
-      height: 100vh; /* full screen height */
-    
-      font-size: 2rem;
-    }
-
-    #home { background: lightblue; }
-    #about { background: lightgreen; }
-    #contact { background: lightcoral; }
-
-    /* Smooth scroll effect */
     html {
       scroll-behavior: smooth;
     }
+    .malibu {
+      font-family: "Malibu Sunday", serif;
+    }
+    .playwrite {
+      font-family: "Playwrite DE SAS", cursive;
+    }
   </style>
 </head>
-<body>
+<body class="m-0 p-0">
+<div id="customCursor"></div>
   <!-- Navbar -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+   <div class="hand bg-black">
+    <h1 class="text-[2.5vw] text-white">Scroll</h1>
+</div>
+  <nav class="fixed top-4 left-8 right-8 flex items-center justify-between bg-black rounded-[42px] py-2 px-4 z-50 hidden sm:flex">
+    <a href="#home">
+      <div class="flex items-center ml-6">
+      <img src="Asserts/Logo.svg" alt="Logo" class="w-7 h-7">
+      <p class="malibu text-white text-[24px] ml-[-12px]">CHIYAN</p>
+    </div>
+    </a>
+    <div class="flex items-center mr-4 text-white/60">
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
+         <a href="#about" class="malibu text-base px-4 py-2">About Us</a>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
+        <a href="#service" class="malibu text-base px-4 py-2">Service</a>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
+        <a href="#blogs" class="malibu text-base px-4 py-2">Blog</a>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
+        <a href="#testimonials" class="malibu text-base px-4 py-2">Testimonials</a>
+      </div>
+      <div class="ml-3 bg-[#0745E8] rounded-[32px] cursor-pointer">
+        <a href="#contact"><p class="malibu text-base px-8 py-3">Contact Us</p></a>
+      </div>
+    </div>
+  </nav> 
+  <div class="absolute top-4 z-50 flex justify-between ml-[24px] mr-[24px] w-[90%] sm:hidden">
+    <img class="w-[40px]" src="Asserts/Logo.svg ">
+    <div class="pt-[8px] pb-[8px] pl-[24px] pr-[24px] bg-[#0745E8] rounded-[32px] flex justify-center items-center"><p class="text-white">Contact Us</p></div>
+  </div>
+<!-- <header id="home" class="relative h-screen bg-cover bg-no-repeat" style="background-image: url('Asserts/Hero_bg.svg');">
+    <div id="home_content" class="absolute ml-[48px] mr-[48px] mt-[18vh]">
+      <div class="flex justify-between" id="Upper_section">
+        <div id="heading" class="malibu text-white text-6xl mt-3 leading-tight">
+          <p>Creative Web,</p>
+          <p>Mobile Power for</p>
+          <p class="playwrite text-white text-6xl mt-3">You</p>
+        </div>
+        <div id="subheading" class="mt-4 w-2/5 text-base text-white/60">
+          <p>
+            Welcome to Chiyan Software Solutions Pvt Ltd. At Chiyan Software Solutions, 
+            we empower businesses and individuals with innovative software solutions, 
+            leveraging cutting-edge technologies to streamline operations, 
+            enhance productivity, and unlock growth potential.
+          </p>
+       <div class="b">
+        <button class="blob-btn">
+          Contact Us
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </button>
+        <br/>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+        </div>
+      </div>
+ 
+      <div id="lower_section"  class="flex justify-between mr-[48px]  ">
+      <div class="wrapper_container mt-[2vh]">
+        <div class="wrapper">
+<div class="itemleft item1"><img src="Asserts/Amazon.svg"/></div>
+  <div class="itemleft item2"><img src="Asserts/Walmart.svg"/></div>
+  <div class="itemleft item3"><img src="Asserts/McDonald's.svg"/></div>
+<div class="itemleft item4"><img src="Asserts/Amazon.svg"/></div>
+  <div class="itemleft item5"><img src="Asserts/Walmart.svg"/></div>
+  <div class="itemleft item6"><img src="Asserts/McDonald's.svg"/></div>
+  <div class="itemleft item7"><img src="Asserts/Amazon.svg"/></div>
+    <div class="itemleft item8"><img src="Asserts/McDonald's.svg"/></div>
+        </div>
+        <div class="wrapper">
+<div class="itemright item1"><img src="Asserts/Amazon.svg"/></div>
+  <div class="itemright item2"><img src="Asserts/Walmart.svg"/></div>
+  <div class="itemright item3"><img src="Asserts/McDonald's.svg"/></div>
+<div class="itemright item4"><img src="Asserts/Amazon.svg"/></div>
+  <div class="itemright item5"><img src="Asserts/Walmart.svg"/></div>
+  <div class="itemright item6"><img src="Asserts/McDonald's.svg"/></div>
+  <div class="itemright item7"><img src="Asserts/Amazon.svg"/></div>
+    <div class="itemright item8"><img src="Asserts/McDonald's.svg"/></div>
+        </div>
+</div>
+        <div id="counts" class="w-[36%] mt-[8px]">
+  <div class="border-[1px] border-[rgba(255,255,255,0.50)] mb-6"></div>
 
-  <!-- Sections -->
-  <section id="home">Home Section</section>
-  <section id="about">About Section</section>
-  <section id="contact">Contact Section</section>
+  <div  class="flex ">
+    <div class="w-fit">
+      <p class="text-white  text-[5vw] font-bold counter" data-target="15">0</p>
+      <p class="text-white/80 ml-[12px]  text-[24px]">Years of</p>
+      <p class="text-white/80 ml-[12px]  text-[24px]">innovation</p>
+    </div>
+
+    <div class="w-fit ml-[8vw]">
+      <p class="text-white text-[5vw] font-bold counter" data-target="100">0</p>
+      <p class="text-white/80 ml-[12px] text-[24px]">Clients and</p>
+      <p class="text-white/80 ml-[12px] text-[24px]">Growing</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </header> -->
+ <header id="home" class="relative min-h-screen bg-cover bg-no-repeat" style="background-image: url('Asserts/Hero_bg.svg');">
+  <div id="home_content" class="absolute inset-0 px-6 md:px-12 lg:ml-[48px] lg:mr-[48px] mt-[12vh] md:mt-[16vh] ">
+    <!-- Upper Section -->
+    <div class="flex flex-col lg:flex-row justify-between gap-8" id="Upper_section">
+      <!-- Heading -->
+      <div id="heading" class="malibu text-white text-4xl sm:text-5xl xl:text-6xl md:text-5xl mt-3 leading-tight">
+        <p>Creative Web,</p>
+        <p class="mt-[2vh]">Mobile Power for</p>
+        <p class="playwrite text-white text-4xl sm:text-5xl xl:text-6xl md:text-5xl mt-3">You</p>
+      </div>
+      <!-- Subheading -->
+      <div id="subheading" class="mt-6 lg:mt-4 lg:w-2/5  text-sm sm:text-base text-white/70">
+        <p>
+          Welcome to Chiyan Software Solutions Pvt Ltd. At Chiyan Software Solutions, 
+          we empower businesses and individuals with innovative software solutions, 
+          leveraging cutting-edge technologies to streamline operations, 
+          enhance productivity, and unlock growth potential.
+        </p>
+
+        <div class="b mt-6">
+          <button class="blob-btn text-sm sm:text-base">
+            Contact Us
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="hidden">
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lower Section -->
+    <div id="lower_section" class="flex flex-col lg:flex-row justify-between items-center lg:items-start sm:mt-20 xl:mt-[20vh] gap-9">
+      <!-- Logo Marquee -->
+   <div class="wrapper_container">
+  <div class="wrapper mt-[4vh]  md:mt-[2vh] lg:mt-[0]">
+    <div class="itemleft md:w-[20%] lg:w-[32%] item1"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemleft md:w-[20%] lg:w-[32%] item2"><img src="Asserts/Walmart.svg" /></div>
+    <div class="itemleft md:w-[20%] lg:w-[32%] item3"><img src="Asserts/McDonald's.svg" /></div>
+    <div class="itemleft md:w-[20%] lg:w-[32%] item4"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemleft md:w-[20%] lg:w-[32%] item5"><img src="Asserts/Walmart.svg" /></div>
+    <div class="itemleft md:w-[20%] lg:w-[32%] item6"><img src="Asserts/McDonald's.svg" /></div>
+    <div class="itemleft md:w-[20%] lg:w-[32%] item7"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemleft md:w-[20%] lg:w-[32%] item8"><img src="Asserts/McDonald's.svg" /></div>
+  </div>
+  <div class="wrapper hidden sm:block">
+    <div class="itemright md:w-[20%] lg:w-[32%] item1 "><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemright md:w-[20%] lg:w-[32%] item1  item2"><img src="Asserts/Walmart.svg" /></div>
+    <div class="itemright md:w-[20%] lg:w-[32%] item1  item3"><img src="Asserts/McDonald's.svg" /></div>
+    <div class="itemright md:w-[20%] lg:w-[32%] item1  item4"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemright md:w-[20%] lg:w-[32%] item1  item5"><img src="Asserts/Walmart.svg" /></div>
+    <div class="itemright md:w-[20%] lg:w-[32%] item1 item6"><img src="Asserts/McDonald's.svg" /></div>
+    <div class="itemright md:w-[20%] lg:w-[32%] item1 item7"><img src="Asserts/Amazon.svg" /></div>
+    <div class="itemright md:w-[20%] lg:w-[32%] item1 item8"><img src="Asserts/McDonald's.svg" /></div>
+  </div>
+</div>
+      <!-- Counters -->
+      <div id="counts" class="w-full hidden sm:block lg:w-[40%] text-center lg:text-left">
+        <div class="border-t border-white/50 mb-6"></div>
+        <div class="flex justify-around lg:justify-start lg:gap-[8vw]">
+          
+          <!-- First Count -->
+          <div>
+            <p class="text-white text-[12vw] sm:text-[8vw] md:text-[5vw] font-bold counter" data-target="15">0</p>
+            <p class="text-white/80 text-base md:text-[24px] leading-tight">Years of</p>
+            <p class="text-white/80 text-base md:text-[24px] leading-tight">Innovation</p>
+          </div>
+
+          <!-- Second Count -->
+          <div>
+            <p class="text-white text-[12vw] sm:text-[8vw] md:text-[5vw] font-bold counter" data-target="100">0</p>
+            <p class="text-white/80 text-base md:text-[24px] leading-tight">Clients and</p>
+            <p class="text-white/80 text-base md:text-[24px] leading-tight">Growing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <section id="about" class="lg:h-screen h-[60vh] sm:h-[70vh] bg-w hite ml-[48px] mt-[12vh] mr-[48px] relative ">
+    <div class="lg:flex  justify-between w-[100%] ">
+     <div class="About_Title hidden sm:block ">
+      <p class="text-[#0745E8] text-[20px]">About CHIYAN</p>
+      <p class="mt-[4px] text-[28px]">The Heart of Chiyan</p>
+     </div>
+      <!-- Section Title -->
+  <div id="service_Title" class="text-center mb-10 sm:hidden">
+    <p class="text-[#0745E8] text-[18px]">About CHIYAN</p>
+    <p class="mt-2 text-[24px] font-semibold">The Heart of Chiyan</p>
+  </div>
+     <div class="lg:w-[46%] mt-[6vh] sm:mt-[8vh] lg:mt-[0]">
+      <p class="text-[20px]">Chiyan Software Solutions Pvt Ltd delivers secure, scalable, and innovative software solutions. Our expert team drives impact and builds lasting client relationships through exceptional value and service.</p>
+      <a href="about.html">
+<div class="bw">
+        <button class="blob-btn blob-btn_w text-black">
+          Know More
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </button>
+        <br/>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+      </a>
+      
+    </div>
+    </div>
+    
+<div
+  class="lg:flex   flex-wrap justify-center items-center absolute xl:top-[32vh] lg:mt-[-16vh] xl:mt-[0] w-full h-auto hidden lg:block "
+>
+  <!-- Circle 1 -->
+  <div
+    class=" lg:w-[300px] lg:h-[300px] xl:w-[420px] xl:h-[420px] border-[2px] rounded-full flex justify-center items-center animated-circle"
+  >
+    <div class="flex flex-col items-center">
+      <img
+        class="icon-default w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/product-icon.svg"
+        alt="default"
+      />
+      <img
+        class="icon-hover w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/product-icon-selected.svg"
+        alt="blue"
+      />
+      <div class="flex flex-col items-center text-center mt-[3vh]">
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Product
+        </p>
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Development
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Circle 2 -->
+  <div
+    class="lg:w-[300px] lg:h-[300px] xl:ml-[-24px] xl:w-[420px] xl:h-[420px] border-[2px] rounded-full flex justify-center items-center animated-circle"
+  >
+    <div class="flex flex-col items-center">
+      <img
+        class="icon-default w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/service_logo_nonselect.svg"
+        alt="default"
+      />
+      <img
+        class="icon-hover w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/service_logo.svg"
+        alt="blue"
+      />
+      <div class="flex flex-col items-center text-center mt-[3vh]">
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Service
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Circle 3 -->
+  <div
+    class="lg:w-[300px] lg:h-[300px] xl:ml-[-24px] xl:w-[420px] xl:h-[420px] border-[2px] rounded-full flex justify-center items-center animated-circle"
+  >
+    <div class="flex flex-col items-center">
+      <img
+        class="icon-default w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/Edu_logo_nonselect.svg"
+        alt="default"
+      />
+      <img
+        class="icon-hover w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+        src="/Asserts/Edu_logo.svg"
+        alt="blue"
+      />
+      <div class="flex flex-col items-center text-center mt-[3vh]">
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Education and
+        </p>
+        <p
+          class="text-item text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] text-[rgba(0,0,0,0.50)]"
+        >
+          Empowerment
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>
+  <section id="service" class="h-[120vh] bg-white  ml-[48px] md:mt-[-10vh] lg:mt-[0] hidden sm:block ">
+<div id="service_Title">
+      <p class="text-[#0745E8] text-[20px]">Services</p>
+      <p class="mt-[4px] text-[28px]">Solutions We Provide</p>
+     </div>
+<section class="relative w-full h-[100%] bg-white py-20">
+  <!-- Center vertical line -->
+  <div class="absolute hidden sm:block left-1/2 top-0 h-full w-[3px] bg-gray-300 transform -translate-x-1/2"></div>
+
+  <!-- Timeline item LEFT -->
+  <div class="timeline-item  flex justify-between items-start fadeUp">
+    <div class="timeline-img w-1/2 flex justify-end pr-16">
+      <img src="Asserts/Innovation.svg" alt="Team Working" class="w-[300px] rounded-xl shadow-lg">
+    </div>
+
+    <div class="timeline-content w-1/2 pl-16">
+       <h2 class="text-blue-600 text-[24px] font-semibold w-[80%]">Innovative Solutions for Smarter Management</h2>
+      <p class="text-gray-600 mt-2 w-[80%]">Innovative software products, including FinPort, our stock market management solution.</p>
+    </div>
+  </div>
+
+  <!-- Timeline item RIGHT -->
+  <div class="timeline-item flex justify-between items-start mt-[18vh] fadeUp">
+    <div class="timeline-content w-1/2  text-right pr-16">
+<h2 class="text-blue-600 text-[24px] font-semibold w-[80%] ml-auto text-right">
+  End-to-End IT Services for Modern Businesses
+</h2>
+
+      <p class="text-gray-600 mt-2 text-[16px] w-[80%] ml-auto ">Comprehensive IT services, such as custom development, cloud migration, and maintenance.</p>
+    </div>
+
+    <div class="timeline-img w-1/2 flex justify-start pl-16">
+      <img src="Asserts/IT-service.svg" alt="Award Celebration" class="w-[300px] rounded-xl shadow-lg">
+    </div>
+  </div>
+    <div class="timeline-item flex justify-between items-start mt-[18vh]  fadeUp">
+    <div class="timeline-img w-1/2 flex justify-end pr-16">
+      <img src="Asserts/Innovation.svg" alt="Team Working" class="w-[300px] rounded-xl shadow-lg">
+    </div>
+
+    <div class="timeline-content w-1/2 pl-16">
+       <h2 class="text-blue-600 text-[24px] font-semibold w-[80%]">Innovative Solutions for Smarter Management</h2>
+      <p class="text-gray-600 mt-2 w-[80%]">Innovative software products, including FinPort, our stock market management solution.</p>
+    </div>
+  </div>
+</section>
+  </section>
+  <section id="service" class="bg-white py-10 px-4 sm:hidden">
+  <!-- Section Title -->
+  <div id="service_Title" class="text-center mb-10">
+    <p class="text-[#0745E8] text-[18px]">Services</p>
+    <p class="mt-2 text-[24px] font-semibold">Solutions We Provide</p>
+  </div>
+
+  <!-- Timeline Items -->
+  <div class="flex flex-col space-y-12">
+    <!-- Item 1 -->
+    <div class="flex flex-col items-center text-center fadeUp">
+      <img src="Asserts/Innovation.svg" alt="Team Working" class="w-[250px] rounded-xl shadow-lg mb-4">
+      <h2 class="text-blue-600 text-[20px] font-semibold">Innovative Solutions for Smarter Management</h2>
+      <p class="text-gray-600 mt-2 text-[16px]">Innovative software products, including FinPort, our stock market management solution.</p>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="flex flex-col items-center text-center fadeUp">
+      <img src="Asserts/IT-service.svg" alt="Award Celebration" class="w-[250px] rounded-xl shadow-lg mb-4">
+      <h2 class="text-blue-600 text-[20px] font-semibold">End-to-End IT Services for Modern Businesses</h2>
+      <p class="text-gray-600 mt-2 text-[16px]">Comprehensive IT services, such as custom development, cloud migration, and maintenance.</p>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="flex flex-col items-center text-center fadeUp">
+      <img src="Asserts/Innovation.svg" alt="Team Working" class="w-[250px] rounded-xl shadow-lg mb-4">
+      <h2 class="text-blue-600 text-[20px] font-semibold">Innovative Solutions for Smarter Management</h2>
+      <p class="text-gray-600 mt-2 text-[16px]">Innovative software products, including FinPort, our stock market management solution.</p>
+    </div>
+  </div>
+</section>
+
+  <section id="blogs" class="blog h-[72vh] sm:h-[88vh] bg-white mt-[5vh] sm:mt-[36vh] xl:mt-[24vh]  w-[98%] relative">
+      <div class="About_Title hidden sm:block">
+      <p class="text-[#0745E8] text-[20px] ml-[48px]">Blogs</p>
+      <p class="mt-[4px] text-[28px] ml-[48px]">Innovative Thoughts</p>
+     </div>
+      <!-- Section Title -->
+  <div id="BLOG_Title" class="text-center mb-10 sm:hidden">
+    <p class="text-[#0745E8] text-[18px]">Blogs</p>
+    <p class="mt-2 text-[24px] font-semibold">Innovative Thoughts</p>
+  </div>
+
+
+  <div class="outer_wrapper md:mt-[6vh] lg:mt-[0]">
+    <div class="inner"> 
+      <div class="slide lg:w-[78vw] lg:h-[70vh] md:w-[80vw]  md:h-[70vh] relative">
+         <a href="https://www.google.com">
+        <img src="Asserts/image 5.svg"/>
+      </a>
+      </div>
+      <div class="slide lg:w-[78vw] lg:h-[70vh] md:w-[80vw]  md:h-[70vh] relative">
+         <a href="https://www.google.com">
+        <img src="Asserts/image 2.svg"/>
+      </a>
+      </div>
+        <div class="slide lg:w-[78vw] lg:h-[70vh] md:w-[80vw]  md:h-[70vh] relative">
+         <a href="https://www.google.com">
+        <img src="Asserts/image 1.svg"/>
+      </a>
+      </div>
+        <div class="slide lg:w-[78vw] lg:h-[70vh] md:w-[80vw]  md:h-[70vh] relative">
+         <a href="https://www.google.com">
+        <img src="Asserts/image 5.svg"/>
+      </a>
+      </div>
+       
+    </div>
+  </div>
+</section>
+<!-- <section id="testimonials" class=" h-[74vh] bg-white ml-[48px] mr-[48px]">
+  <div id="testimonials_Title">
+    <p class="text-[#0745E8] text-[20px]">Testimonials</p>
+    <p class="mt-[4px] text-[28px]">Client Voices</p>
+  </div>
+  <div class="flex items-center justify-center mt-[6vh] w-[100%] h-[76%]">
+    <div class="xl:w-[60%] lg:w-[80%] h-[100%]">
+      <div class="flex justify-between">
+        <div class="person-avatar flex justify-center items-center w-[70px] h-[70px] rounded-full bg-[#E6EEFF] animate-pulseSlow"
+             data-testimonial-id="t1">
+          <img class="w-[40px]" src="Asserts/Image-1.svg" alt="Person 1" />
+        </div>
+
+        <div class="person-avatar selected flex justify-center items-center w-[100px] h-[100px] rounded-full bg-[#0745E8] mt-[8vh]"
+             data-testimonial-id="t2">
+          <img class="w-[85px]" src="Asserts/Image-2.svg" alt="Person 2" />
+        </div>
+
+        <div class="person-avatar flex justify-center items-center w-[70px] h-[70px] rounded-full bg-[#E6FFF0] animate-pulseSlow mb-[10vh]"
+             data-testimonial-id="t3">
+          <img class="w-[40px]" src="Asserts/Image-3.svg" alt="Person 3" />
+        </div>
+      </div>
+
+      <div class="flex items-center flex-col w-[100%] mt-[5vh]">
+        <p id="testimonial-quote-line-1" class="font-semibold text-[20px]">The biggest challenge was reaching the right buyers,</p>
+        <p id="testimonial-quote-line-2" class="font-semibold text-[20px]">After joining Chiyan, everything changed.</p>
+      </div>
+
+      <div class="flex justify-end w-[80%] mt-[2vh]">
+        <p id="testimonial-name" class="text-[18px]">-Ragul</p>
+      </div>
+
+      <div class="relative flex justify-between items-center mt-[5vh]">
+        <div class="p-3 rounded-full bg-[#FFF3E6] animate-pulseSlow">
+          <img src="Asserts/Image-4.svg" />
+        </div>
+        <div class="p-3 rounded-full bg-[#E6FFF9] animate-pulseSlow relative top-[12vh]">
+          <img src="Asserts/Image-3.svg" />
+        </div>
+        <div class="p-3 rounded-full bg-[#F0E6FF] animate-pulseSlow">
+          <img class="w-[40px]" src="Asserts/Image-2.svg" />
+        </div>
+        <div class="p-3 rounded-full bg-[#E6F7FF] animate-pulseSlow relative top-[6vh]">
+          <img src="Asserts/Image-1.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<section id="testimonials" class="h-auto bg-white ml-[24px] mr-[24px] mt-[5vh] sm:mt-[4vh] lg:mt-[0px] md:ml-[48px] md:mr-[48px] py-[4vh]">
+  <div id="testimonials_Title" class="text-center md:text-left">
+    <p class="text-[#0745E8] text-[18px] md:text-[20px]">Testimonials</p>
+    <p class="mt-[4px] text-[24px] md:text-[28px] font-semibold">Client Voices</p>
+  </div>
+
+  <!-- Slider Container (visible only on mobile) -->
+  <div class="block md:hidden mt-[5vh] overflow-x-auto hide-scrollbar snap-x snap-mandatory flex gap-6 px-4">
+    <div class="snap-center flex-shrink-0 w-[90%] bg-[#F9FAFB] rounded-[16px] p-6 shadow-md">
+      <div class="flex justify-center">
+        <img src="Asserts/Image-1.svg" class="w-[80px] h-[80px] rounded-full bg-[#E6EEFF] p-4" />
+      </div>
+      <p class="text-center mt-4 font-semibold text-[18px]">Chiyan helped us reach customers faster,</p>
+      <p class="text-center font-semibold text-[18px]">and improved our visibility across regions.</p>
+      <p class="text-right mt-3 text-[16px]">- Harini</p>
+    </div>
+
+    <div class="snap-center flex-shrink-0 w-[90%] bg-[#F9FAFB] rounded-[16px] p-6 shadow-md">
+      <div class="flex justify-center">
+        <img src="Asserts/Image-2.svg" class="w-[80px] h-[80px] rounded-full bg-[#0745E8] p-4" />
+      </div>
+      <p class="text-center mt-4 font-semibold text-[18px]">The biggest challenge was reaching the right buyers,</p>
+      <p class="text-center font-semibold text-[18px]">After joining Chiyan, everything changed.</p>
+      <p class="text-right mt-3 text-[16px]">- Ragul</p>
+    </div>
+
+    <div class="snap-center flex-shrink-0 w-[90%] bg-[#F9FAFB] rounded-[16px] p-6 shadow-md">
+      <div class="flex justify-center">
+        <img src="Asserts/Image-3.svg" class="w-[80px] h-[80px] rounded-full bg-[#E6FFF0] p-4" />
+      </div>
+      <p class="text-center mt-4 font-semibold text-[18px]">We got new clients every week,</p>
+      <p class="text-center font-semibold text-[18px]">Chiyan made marketing effortless!</p>
+      <p class="text-right mt-3 text-[16px]">- Priya</p>
+    </div>
+
+    <div class="snap-center flex-shrink-0 w-[90%] bg-[#F9FAFB] rounded-[16px] p-6 shadow-md">
+      <div class="flex justify-center">
+        <img src="Asserts/Image-4.svg" class="w-[80px] h-[80px] rounded-full bg-[#FFF3E6] p-4" />
+      </div>
+      <p class="text-center mt-4 font-semibold text-[18px]">Our online sales grew rapidly,</p>
+      <p class="text-center font-semibold text-[18px]">Thanks to Chiyan’s marketing insights!</p>
+      <p class="text-right mt-3 text-[16px]">- Vishal</p>
+    </div>
+  </div>
+
+ <!--Desktop Version (your existing layout) -->
+  <div class="hidden md:flex items-center justify-center mt-[6vh] w-[100%]">
+    <div class="xl:w-[60%] lg:w-[80%] w-full">
+      <div class="flex justify-between overflow-x-auto md:overflow-visible gap-6 px-2 hide-scrollbar">
+        <div class="person-avatar flex-shrink-0 flex justify-center items-center w-[70px] h-[70px] rounded-full bg-[#E6EEFF] cursor-pointer animate-pulseSlow" data-id="1">
+          <img class="w-[40px]" src="Asserts/Image-1.svg" alt="Person 1" />
+        </div>
+        <div class="person-avatar flex-shrink-0 flex justify-center items-center w-[100px] h-[100px] rounded-full bg-[#0745E8] mt-[4vh] md:mt-[8vh] cursor-pointer" data-id="2">
+          <img class="w-[85px]" src="Asserts/Image-2.svg" alt="Person 2" />
+        </div>
+        <div class="person-avatar flex-shrink-0 flex justify-center items-center w-[70px] h-[70px] rounded-full bg-[#E6FFF0] cursor-pointer mb-[4vh] md:mb-[10vh] animate-pulseSlow" data-id="3">
+          <img class="w-[40px]" src="Asserts/Image-3.svg" alt="Person 3" />
+        </div>
+      </div>
+
+      <div class="flex items-center flex-col mt-[5vh] text-center w-full">
+        <div class="w-[600px] max-w-[90%] mx-auto transition-opacity duration-300" id="testimonial-text">
+          <p id="testimonial-line1" class="font-semibold text-[18px] md:text-[20px]">
+            The biggest challenge was reaching the right buyers,
+          </p>
+          <p id="testimonial-line2" class="font-semibold text-[18px] md:text-[20px]">
+            After joining Chiyan, everything changed.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-end w-[80%] mt-[2vh]">
+        <p id="testimonial-name" class="text-[16px] md:text-[18px]">- Ragul</p>
+      </div>
+
+      <div class="relative flex justify-between items-center mt-[5vh] overflow-x-auto md:overflow-visible gap-6 px-2 hide-scrollbar">
+        <div class="person-avatar flex-shrink-0 flex justify-center items-center p-3 rounded-full bg-[#FFF3E6] cursor-pointer animate-pulseSlow" data-id="4">
+          <img src="Asserts/Image-4.svg" />
+        </div>
+        <div class="person-avatar flex-shrink-0 flex justify-center items-center p-3 rounded-full bg-[#E6FFF9] md:relative md:top-[12vh] cursor-pointer animate-pulseSlow" data-id="5">
+          <img src="Asserts/Image-3.svg" />
+        </div>
+        <div class="person-avatar flex-shrink-0 flex justify-center items-center p-3 rounded-full bg-[#F0E6FF] cursor-pointer animate-pulseSlow" data-id="6">
+          <img class="w-[40px]" src="Asserts/Image-2.svg" />
+        </div>
+        <div class="person-avatar flex-shrink-0 flex justify-center items-center p-3 rounded-full bg-[#E6F7FF] md:relative md:top-[6vh] cursor-pointer animate-pulseSlow" data-id="7">
+          <img src="Asserts/Image-1.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes pulseSlow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+.animate-pulseSlow { animation: pulseSlow 3s ease-in-out infinite; }
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+
+<script>
+  const testimonials = {
+    1: {
+      line1: "Chiyan helped us reach customers faster,",
+      line2: "and improved our visibility across regions.",
+      name: "- Harini"
+    },
+    2: {
+      line1: "The biggest challenge was reaching the right buyers,",
+      line2: "After joining Chiyan, everything changed.",
+      name: "- Ragul"
+    },
+    3: {
+      line1: "We got new clients every week,",
+      line2: "Chiyan made marketing effortless!",
+      name: "- Priya"
+    },
+    4: {
+      line1: "Our online sales grew rapidly,",
+      line2: "Thanks to Chiyan’s marketing insights!",
+      name: "- Vishal"
+    },
+    5: {
+      line1: "Chiyan connected us with new regions,",
+      line2: "It expanded our reach beyond expectations.",
+      name: "- Sneha"
+    },
+    6: {
+      line1: "We gained better customer engagement,",
+      line2: "Chiyan’s support made it simple!",
+      name: "- Karthik"
+    },
+    7: {
+      line1: "Chiyan gave our business great exposure,",
+      line2: "Now we attract clients across India.",
+      name: "- Meena"
+    }
+  };
+
+  const avatars = document.querySelectorAll(".person-avatar");
+  const line1 = document.getElementById("testimonial-line1");
+  const line2 = document.getElementById("testimonial-line2");
+  const nameEl = document.getElementById("testimonial-name");
+
+  avatars.forEach(avatar => {
+    avatar.addEventListener("click", () => {
+      // Reset all bg colors & restore pulse animation
+      avatars.forEach(a => {
+        const id = a.dataset.id;
+        a.classList.add("animate-pulseSlow");
+        if (id == 1) a.style.backgroundColor = "#E6EEFF";
+        else if (id == 2) a.style.backgroundColor = "#E6EEFF";
+        else if (id == 3) a.style.backgroundColor = "#E6FFF0";
+        else if (id == 4) a.style.backgroundColor = "#FFF3E6";
+        else if (id == 5) a.style.backgroundColor = "#E6FFF9";
+        else if (id == 6) a.style.backgroundColor = "#F0E6FF";
+        else if (id == 7) a.style.backgroundColor = "#E6F7FF";
+      });
+
+      // Set clicked one to blue and stop its pulse
+      avatar.style.backgroundColor = "#0745E8";
+      avatar.classList.remove("animate-pulseSlow");
+
+      // Update testimonial text
+      const data = testimonials[avatar.dataset.id];
+      line1.textContent = data.line1;
+      line2.textContent = data.line2;
+      nameEl.textContent = data.name;
+    });
+  });
+</script>
+
+<style>
+@keyframes pulseSlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+.animate-pulseSlow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+</style>
+
+<section id="contact" class="h-[180vh] sm:h-screen bg-black mt-[5vh] sm:mt-[20vh]">
+<div class="marquee">
+  <div class="marquee-content">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+  </div>
+</div>
+<div class="flex-col mt-[32px] sm:mt-[0] md:flex-row flex justify-between ml-[48px] mr-[48px] ">
+  <form class="flex flex-col lg:w-[40%]  lg:mt-[8vh] md:mt-[4vh] md:w-[50%]">
+  <label class="text-white text-[24px]" for="name">Name</label>
+  <input
+    class="border-b-[2px] bg-black mt-[3vh] text-white placeholder-[rgba(255,255,255,0.5)] outline-none focus:outline-none"
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Enter your name"
+  >
+  <label class="text-white text-[24px] mt-[5vh]" for="email">Email Id</label>
+  <input
+    class="border-b-[2px] bg-black mt-[3vh] text-white placeholder-[rgba(255,255,255,0.5)] outline-none focus:outline-none"
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter your email"
+  >
+  <label class="text-white text-[24px] mt-[5vh]" for="message">Message</label>
+  <textarea
+    class="border-b-[2px] bg-black mt-[3vh] text-white placeholder-[rgba(255,255,255,0.5)] outline-none focus:outline-none h-[20vh]"
+    id="message"
+    name="message"
+    placeholder="Type your message"
+  ></textarea>
+
+  <div class="bg-[#0745E8] rounded-[32px] cursor-pointer w-fit mt-[24px]">
+    <p class="malibu text-white px-8 py-3">Submit</p>
+  </div>
+</form>
+<div class="lg:w-[40%]  lg:mt-[8vh] md:mt-[4vh] sm:flex sm:justify-end sm:items-end mt-[5vh] sm:mt-[0px]">
+<div class="sm:w-[50%]">
+  <div class="mobile_design flex sm:block "><div>
+        <p class="text-[rgba(255,255,255,0.5)]">Visit Us</p>
+        <h1 class="mt-[2vh] text-white">43/8 kovil, RS Puram,Coimbatore TamilNadu 642334</h1>
+        </div>
+        <div class="sm:mt-[6vh]">
+        <p class="text-[rgba(255,255,255,0.5)]">Talk to Us</p>
+        <h1 class="mt-[2vh] text-white">9876543210</h1>
+        <h1 class="mt-[6px] text-white">chiyan@gmail.com</h1>
+        </div></div>
+        <div class="flex  mt-[6vh] ml-[30%] sm:ml-[0px]">
+          <a href="www.instagram.com"><img src="Asserts/insta.svg"/></a>
+           <a class="ml-[12px]" href="www.youtube.com"><img src="Asserts/Youtube.svg"/></a>
+            <a class="ml-[12px]" href="www.instagram.com"><img src="Asserts/twitter.svg"/></a>
+        </div>
+      </div>
+    </div>
+</div>
+<div class=" border-[1px] border-dashed border-[rgba(255,255,255,0.5)] xl:mt-[5vh] mt-[5vh] sm:mt-[3vh]"></div>
+<footer class=" bg-black text-white py-10 px-16 block sm:flex justify-between w-[100%]">
+  <!-- Left Section -->
+  <div class="flex flex-col xl:w-[60%] md:w-[50%] ml-[-24px] mr-[-24px] sm:ml-[0px] sm:mr-[0px]">
+    <div class="mb-4">
+      <img src="Asserts/logo.svg" alt="Logo" class="w-10 h-10">
+    </div>
+    <p class="text-sm leading-relaxed">
+      At Chiyan Software Solutions Pvt Ltd, we develop innovative and efficient products tailored to meet the evolving needs of businesses and individuals.
+      Our products are designed with scalability, ease of use, and cutting edge technology to deliver superior value.
+    </p>
+  </div>
+
+  <!-- Right Section -->
+  <div class="flex text-sm justify-between xl:w-[16%] sm:w-[24%] w-[20%] mt-[5vh] sm:mt-[0] ml-[-24px] mr-[-24px] sm:ml-[0px] sm:mr-[0px]">
+    <div class="flex flex-col  w-fit">
+      <a href="#home" class="hover:text-white hover:underline w-fit text-gray-500 cursor-not-allowed">Home</a>
+      <a href="#about" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">About Us</a>
+      <a href="#service" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Service</a>
+      <a href="#blogs" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Blog</a>
+      <a href="#testimonials" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Testimonials</a>
+    </div>
+    <div class="flex flex-col ml-[2vw] w-fit">
+      <a href="#" class="hover:text-white hover:underline  w-fit text-gray-500 cursor-not-allowed">Terms</a>
+      <a href="#" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Policy</a>
+      <a href="#" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Legal</a>
+    </div>
+  </div>
+</footer>
+<div class="  h-[2vh] flex justify-center items-center bg-blue bg-[rgba(7,69,232,1)]">
+   <p class="text-white sm:text-[16px] text-[12px]">Copyright @ 2025. Made with Love by Chiyan Software solution pvt Ltd.</p>
+  </div>
+  </section>
+<script>
+  // Set up GSAP
+gsap.set("#customCursor", { xPercent: -50, yPercent: -50 });
+
+const cursor = document.querySelector("#customCursor");
+const hand = document.querySelector(".hand");
+// const title = document.querySelector(".outer_wrapper"); // optional, only if exists
+
+let mouseX = 0;
+let mouseY = 0;
+
+// Animate cursor smoothly
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  gsap.to(cursor, { x: mouseX, y: mouseY, duration: 0.2, ease: "power2.out" });
+});
+
+// Hover enlarge effect for links
+const navLinks = document.querySelectorAll("a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("mouseenter", () => cursor.classList.add("is-large"));
+  link.addEventListener("mouseleave", () => cursor.classList.remove("is-large"));
+});
+
+// Optional “hand” animation (only if .outer_wrapper exists)
+const title = document.querySelector(".outer_wrapper");
+if (title) {
+  title.addEventListener("mouseenter", () => {
+    gsap.to(hand, {
+      scale: 1,
+      opacity: 1,
+      top: "-75px",
+      left: "-75px",
+      rotate: 0,
+      ease: "elastic.out(1, 0.3)",
+      duration: 1,
+    });
+  });
+
+  title.addEventListener("mousemove", () => {
+    gsap.to(hand, { x: mouseX, y: mouseY, duration: 0.3 });
+  });
+
+  title.addEventListener("mouseleave", () => {
+    gsap.to(hand, {
+      scale: 0,
+      opacity: 0,
+      top: "10",
+      left: "40",
+      rotate: 45,
+      duration: 0.2,
+    });
+  });
+}
+
+
+
+
+// Select all the direct children divs of the navigation items container
+
+</script>
+
 </body>
 </html>
+
+
+'   '

@@ -1,0 +1,798 @@
+* {
+  margin: 0;
+  padding: 0%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS:wght@100..400&display=swap');
+
+body{
+  cursor: none;
+}
+
+
+ .cursor, .hand {
+    position: fixed;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform .1s;
+}
+
+.cursor {
+    background: black;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 999;
+}
+   #customCursor {
+    /* ... (rest of the base styling) ... */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px; /* Slightly larger for better effect */
+    height: 30px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    
+    /* Set a neutral color for the cursor (e.g., white or black) */
+    /* This color will be 'blended' with the background */
+    background-color: white; 
+      border: 1px solid black; 
+    /* 🔥 The Key Property for Negative Color Effect 🔥 */
+    mix-blend-mode: difference;
+    /* The smooth animation for movement */
+     transition: 
+        transform .1s, 
+        background-color 0.25s ease,
+        width 0.2s ease, /* Smooth width change */
+        height 0.2s ease; /* Smooth height change */
+}
+
+/* New class for the larger size */
+#customCursor.is-large {
+    width: 60px; /* Increase size */
+    height: 60px; /* Must match width to stay a circle */
+    /* Adjust border if needed to maintain appearance */
+}
+.autoshow{
+  animation: text-appear both;
+  animation-timeline: view();
+}
+@keyframes text-appear{
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hand {
+    
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    z-index: 9999;
+    display: grid;
+    place-content: center;
+    transform: rotate(45deg);
+    opacity: 0;
+    
+}
+.b {
+  
+  border-radius: 30px;
+  margin-top: 6vh;
+}
+.bw {
+  
+  border-radius: 30px;
+  margin-top: 4vh;
+}
+.animated-circle {
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.animated-circle:hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.6);
+  transform: scale(1.08);
+  background-color: rgba(7, 69, 232, 0.2);
+}
+.icon-default {
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+/* Blue icon hidden initially */
+.icon-hover {
+  display: none;
+  transition: opacity 0.4s ease;
+}
+.animated-circle:hover .icon-default {
+  display: none;
+}
+.animated-circle:hover .icon-hover {
+  display: block;
+}
+
+/* Change text color smoothly */
+.animated-circle:hover .text-item {
+  color: black;
+}
+/* Text color transition */
+.text-item {
+  transition: color 0.4s ease;
+}
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 16px 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.blob-btn:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #1A1A1A;
+  border-radius: 30px;
+}
+.blob-btn:after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s 0.2s;
+  border-radius: 30px;
+}
+.blob-btn:hover {
+  color: #ffffff;
+  border-radius: 30px;
+}
+.blob-btn:hover:after {
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+.blob-btn__inner {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  
+}
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url("#goo");
+}
+.blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #0505a9;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+@supports (filter: url("#goo")) {
+  .blob-btn__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  transition-delay: 0.08s;
+}
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  transition-delay: 0.16s;
+}
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  transition-delay: 0.24s;
+}
+.blob-btn:hover .blob-btn__blob {
+  transform: translateZ(0) scale(1.7);
+}
+@supports (filter: url("#goo")) {
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
+.selected {
+      border: 3px solid #0745E8;
+    }
+    /* .wrapper_container{
+  width: 36%;
+  height: 24vh;
+  border: 1px solid white;
+  border-radius: 32px;
+}
+.wrapper {
+  position: relative;
+  height: 100px;
+
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+@keyframes scrollRight {
+  to {
+    right: -200px;
+  }
+}
+
+.itemleft{
+   margin-top: 4vh;
+}
+.itemright{
+   margin-top: 4vh;
+}
+.itemleft,
+.itemright {
+  
+  width: 28%;
+  height: 38%;
+
+  border-radius: 6px;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+
+.itemleft {
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
+}
+
+.itemright {
+  right: max(calc(200px * 8), calc(100% + 200px));
+  animation-name: scrollRight;
+}
+
+.item1 {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.item7 {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.item8 {
+  animation-delay: calc(30s / 8 * (8 - 8) * -1);
+} */
+ /* Base styles (desktop default) */
+.wrapper_container {
+  width: 36%;
+  height: 24vh;
+  border: 1px solid white;
+  border-radius: 32px;
+}
+
+.wrapper {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.itemleft,
+.itemright {
+  width: 28%;
+  height: 38%;
+  border-radius: 6px;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  margin-top: 4vh;
+}
+
+/* Animations */
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+@keyframes scrollRight {
+  to {
+    right: -200px;
+  }
+}
+
+.itemleft {
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
+}
+
+.itemright {
+  right: max(calc(200px * 8), calc(100% + 200px));
+  animation-name: scrollRight;
+}
+
+.item1 { animation-delay: calc(30s / 8 * (8 - 1) * -1); }
+.item2 { animation-delay: calc(30s / 8 * (8 - 2) * -1); }
+.item3 { animation-delay: calc(30s / 8 * (8 - 3) * -1); }
+.item4 { animation-delay: calc(30s / 8 * (8 - 4) * -1); }
+.item5 { animation-delay: calc(30s / 8 * (8 - 5) * -1); }
+.item6 { animation-delay: calc(30s / 8 * (8 - 6) * -1); }
+.item7 { animation-delay: calc(30s / 8 * (8 - 7) * -1); }
+.item8 { animation-delay: calc(30s / 8 * (8 - 8) * -1); }
+
+/* 📱 Responsive styles */
+
+/* For tablets (768px - 1023px) */
+@media (max-width: 1024px) {
+  .wrapper_container {
+    width: 38%;
+    height: 24vh;
+    border-radius: 24px;
+  }
+
+  .itemleft,
+  .itemright {
+    width: 40%;
+    height: 30%;
+    margin-top: 3vh;
+    
+    
+  }
+   .itemleft{
+    margin-top: 5vh;
+   }
+   
+}
+
+/* For mobiles (<768px) */
+@media (max-width: 768px) {
+  .wrapper_container {
+    width: 90%;
+    height: 18vh;
+    border-radius: 20px;
+  }
+
+  .itemleft,
+  .itemright {
+    width: 45%;
+    height: 34%;
+    margin-top: 2vh;
+  }
+
+  .wrapper {
+    height: 80px;
+  }
+}
+
+.fadeUp{
+  animation: fadeUp both;
+  animation-timeline: view();
+}
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform: translateY(10px)scale(0.5);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.image-scroll{
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+}
+ .inner {
+  display: flex;
+  flex-direction: row;
+  width: 200vw;
+  height: 100%;
+  transform: rotate(90deg) translateY(-80vh);
+  transform-origin: top left;
+  gap: 24px;
+}
+
+.outer_wrapper {
+  width: 80vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: -50px;
+   
+}
+
+.slide {
+  display: block;           /* important for <a> */
+  flex-shrink: 0;           /* prevent shrinking */
+ padding-bottom: 2vh;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+/* Hide default cursor inside outer_wrapper */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 16vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.marquee-content {
+  display: inline-flex;
+  
+  animation: scroll 20s linear infinite;
+}
+
+.marquee-content img {
+  
+  margin-right: 40px;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+ /* .offers {
+      flex: 1;
+      height: 50%;
+      border:1px #999999 solid;
+     
+      font-size: 24px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 32px;
+    }
+
+    .selected_offer {
+      flex: 2;
+        height: 50%;
+       border-radius: 32px;
+      border:1px #999999 solid;
+      background-color: #010101;
+    }
+    .offers_container{
+       display: flex;
+      gap: 10px;
+      height: 100%;
+      margin: 0;
+
+      
+    }
+    .nonselected{
+      flex: 1;
+      height: 50%;
+      border:1px #999999 solid;
+     
+      font-size: 24px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 32px;
+    } */
+     /*
+ * 1. BASE STYLES for Unselected Offers
+ */
+.offers {
+    flex: 1;
+    /* Added padding for consistency when it expands, to match selected_offer */
+    padding: 28px; 
+    height: 50%;
+    /* Smooth transition for flex (expansion), background, and border */
+    transition: flex 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+    cursor: pointer;
+    border-radius: 32px;
+    border: 1px #999999 solid;
+    /* Ensure flex column for layout flexibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensure the h1 inside a regular offer is black and transitions smoothly */
+.offers h1 {
+    color: black;
+    font-size: 20px; /* Default size for unselected */
+    transition: color 0.3s ease, font-size 0.3s ease; 
+    width: 88%; /* Match original */
+}
+
+/* Hide the hover-specific content by default */
+.offers .hover-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+
+
+/*
+ * 2. THE HOVER EFFECT: Makes unselected offers look like the selected one
+ */
+.offers:hover {
+    flex: 2; /* **EXPANDS THE CARD** */
+    background-color: #010101; /* **DARK BACKGROUND** */
+    border-color: #010101; /* Makes the border blend */
+    /* Padding is already set to 28px by default now */
+}
+
+/* Change the h1 color to white and increase size when the card is hovered */
+.offers:hover h1 {
+    color: white; 
+    font-size: 32px; /* Match selected_offer h1 size */
+    width: 70%; /* Match selected_offer h1 width */
+}
+
+/* Show the hover-specific content when the card is hovered */
+.offers:hover .hover-content {
+    display: flex; /* or flex for the button container */
+    opacity: 1;
+}
+
+/* Adjust display for specific hover-content elements if needed, e.g., the button container */
+.offers:hover .flex .hover-content { /* Targeting the contact button div */
+    display: flex; /* If it's a div holding the button */
+}
+.offers:hover .flex > .hover-content { /* Targeting the image */
+    display: flex;
+}
+
+
+/*
+ * 3. STYLES for the Selected Offer
+ */
+.selected_offer {
+    flex: 2;
+    height: 50%;
+    border-radius: 32px;
+    border: 1px #999999 solid;
+    background-color: #010101;
+    /* Match the structure of offers */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensure the h1 inside the selected offer is white */
+.selected_offer h1 {
+    color: white; 
+    font-size: 32px; /* Explicitly set for selected */
+    width: 70%;
+}
+
+/* The paragraph in selected offer */
+.selected_offer p {
+    color: #999999;
+    width: 70%;
+    margin-top: 2vh;
+}
+
+
+/*
+ * 4. CONTAINER STYLES (Unchanged)
+ */
+.offers_container {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    margin: 0;
+}
+
+/* General button styling for consistency */
+.malibu { /* Assuming 'malibu' is a custom font or style you have */
+    font-size: 16px;
+    padding: 12px 32px; /* px-8 py-3 */
+    color: white;
+}
+
+.w-fit {
+    width: fit-content;
+}
+.h-fit {
+    height: fit-content;
+}
+
+/* The arrow buttons styling */
+.offers .flex .border-\[1px\] {
+    margin-left: 10px; /* Space between contact button and arrow */
+}
+/* Ensure the arrow button in the selected_offer is correctly positioned */
+.selected_offer .flex .border-\[1px\] {
+    margin-left: 10px;
+}
+
+/* Styles for the larger images at the bottom right */
+.offers img:not(.hover-content) { /* Target only the small arrow image in normal state */
+    display: none; /* Hide default arrow images in unhovered state if they conflict */
+}
+.offers:hover img.hover-content {
+    display: block; /* Show the large image on hover */
+}
+.selected_offer img {
+    display: block; /* Always show the large image in selected offer */
+}
+/* Existing Selected Offer Styles (Remains the same) */
+.selected_offer {
+    flex: 2; /* Expanded default state */
+    /* ... other styles (dark background, white text) */
+    height: 50%;
+    border-radius: 32px;
+    border: 1px #999999 solid;
+    background-color: #010101;
+    transition: flex 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* NEW CLASS: Applies the shrunken style of a regular offer */
+.deselected-by-hover {
+    flex: 1 !important; /* Forces it to shrink like a regular offer */
+    background-color: transparent !important; /* Reverts background */
+    border: 1px #999999 solid !important; /* Reverts border */
+    /* You'll also need to handle the text color change, potentially with a sibling rule */
+}
+.deselected-by-hover img{
+  display: none;
+}
+/* Ensure text turns black */
+.deselected-by-hover h1 {
+    color: black !important;
+    font-size: 20px;
+}
+/* Hide the extra content in the deselected state */
+.deselected-by-hover p,
+.deselected-by-hover .flex:not(:has(.border-\[1px\])) { 
+    display: none !important;
+}
+
+/* Existing offers:hover styles (Remains the same) */
+.offers:hover {
+    flex: 2;
+    background-color: #010101;
+    border-color: #010101;
+}
+/* ... and other hover styles for .offers ... */
+@media (min-width: 768px) and (max-width: 1000px){
+  .offers:hover .hover-content {
+    display: none; /* or flex for the button container */
+    opacity: 1;
+}
+
+/* Adjust display for specific hover-content elements if needed, e.g., the button container */
+.offers:hover .flex .hover-content { /* Targeting the contact button div */
+    display: none; /* If it's a div holding the button */
+}
+.offers:hover .flex > .hover-content { /* Targeting the image */
+    display: none;
+}
+}
+@media (min-width: 425px) and (max-width: 700px){
+  .offers_container{
+   flex-direction: column;
+  }
+  .selected_offer h1 {
+    color: white; 
+    font-size: 24px; /* Explicitly set for selected */
+    width: 70%;
+}
+  .offers:hover .hover-content {
+    display: none; /* or flex for the button container */
+    opacity: 1;
+}
+
+/* Adjust display for specific hover-content elements if needed, e.g., the button container */
+.offers:hover .flex .hover-content { /* Targeting the contact button div */
+    display: none; /* If it's a div holding the button */
+}
+.offers:hover .flex > .hover-content { /* Targeting the image */
+    display: none;
+}
+.offers:hover h1 {
+    color: white; 
+    font-size: 24px; /* Match selected_offer h1 size */
+    width: 70%; /* Match selected_offer h1 width */
+}
+}
+.autoRotate{
+  animation: AutoRotateAnimation;
+  animation-timeline:view(); 
+}
+
+@keyframes AutoRotateAnimation{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
