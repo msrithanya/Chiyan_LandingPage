@@ -5,109 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS:wght@100..400&display=swap');
 
-/* Section styling */
-/* section {
-  height: 100vh; 
-
-  font-size: 2rem;
+body{
+  cursor: none;
 }
 
-#home {
-
-  background-image: url(Asserts/Hero_bg.svg);
-  background-repeat: no-repeat;
-    background-size: cover;    
-}
-#about {
-  background: lightgreen;
-}
-#contact {
-  background: lightcoral;
-}
-
-
-html {
-  scroll-behavior: smooth;
-}
-nav {
-  position: fixed;
-  top: 24px;           
-  left: 32px;         
-  right: 32px;         
-background-color: black;
-  border-radius: 42px;
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 12px;
-  padding-bottom: 12px;
- 
-  background: rgba(255, 255, 255, 0.1);   
-  backdrop-filter: blur(10px);            
-  -webkit-backdrop-filter: blur(10px);   
-
-  border: 1px solid rgba(255, 255, 255, 0.2); 
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);  
-}
-#logo{
-  display: flex;
-   margin-left: 27px;
-}
-#logo_img{
-  width: 24px;
-  height: 24px;
-}
-#logo_name{
-  font-family: "Malibu Sunday";
-font-size: 24px;
-font-style: normal;
-font-weight: 400;
-color: white;
-margin-left: 12px;
-}
-#menus{
-  margin-right: 24px;
-color: rgba(255, 255, 255, 0.60);
-  display: flex;
-}
-#menus div{
-   margin-left: 12px;
-   padding: 12px 16px;
-}
-
-#CTA{
-background-color: #0745E8;
-border-radius: 32px;
-}
-#menus p{
- 
-  font-family: "Malibu Sunday";
-  padding: 12px 32px;
- font-size: 16px;
-}
-#menus div:hover{
-  border-bottom: 1px solid #0745E8;
-  color: white;
-}
-
-#heading p{
- font-family: "Malibu Sunday", sans-serif;
- color: white;
- margin-top: 12px;
- font-size: 64px;
-}
-
-cta{
-   font-family: "Playwrite DE SAS", cursive;
-  color: white;
- margin-top: 12px;
- font-size: 64px;
-}
-#subheading p{
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.60);
-} */
 
  .cursor, .hand {
     position: fixed;
@@ -123,6 +24,51 @@ cta{
     width: 20px;
     height: 20px;
     z-index: 999;
+}
+   #customCursor {
+    /* ... (rest of the base styling) ... */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px; /* Slightly larger for better effect */
+    height: 30px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    
+    /* Set a neutral color for the cursor (e.g., white or black) */
+    /* This color will be 'blended' with the background */
+    background-color: white; 
+      border: 1px solid black; 
+    /* 🔥 The Key Property for Negative Color Effect 🔥 */
+    mix-blend-mode: difference;
+    /* The smooth animation for movement */
+     transition: 
+        transform .1s, 
+        background-color 0.25s ease,
+        width 0.2s ease, /* Smooth width change */
+        height 0.2s ease; /* Smooth height change */
+}
+
+/* New class for the larger size */
+#customCursor.is-large {
+    width: 60px; /* Increase size */
+    height: 60px; /* Must match width to stay a circle */
+    /* Adjust border if needed to maintain appearance */
+}
+.autoshow{
+  animation: text-appear both;
+  animation-timeline: view();
+}
+@keyframes text-appear{
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hand {
@@ -577,5 +523,276 @@ cta{
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+
+ /* .offers {
+      flex: 1;
+      height: 50%;
+      border:1px #999999 solid;
+     
+      font-size: 24px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 32px;
+    }
+
+    .selected_offer {
+      flex: 2;
+        height: 50%;
+       border-radius: 32px;
+      border:1px #999999 solid;
+      background-color: #010101;
+    }
+    .offers_container{
+       display: flex;
+      gap: 10px;
+      height: 100%;
+      margin: 0;
+
+      
+    }
+    .nonselected{
+      flex: 1;
+      height: 50%;
+      border:1px #999999 solid;
+     
+      font-size: 24px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 32px;
+    } */
+     /*
+ * 1. BASE STYLES for Unselected Offers
+ */
+.offers {
+    flex: 1;
+    /* Added padding for consistency when it expands, to match selected_offer */
+    padding: 28px; 
+    height: 50%;
+    /* Smooth transition for flex (expansion), background, and border */
+    transition: flex 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+    cursor: pointer;
+    border-radius: 32px;
+    border: 1px #999999 solid;
+    /* Ensure flex column for layout flexibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensure the h1 inside a regular offer is black and transitions smoothly */
+.offers h1 {
+    color: black;
+    font-size: 20px; /* Default size for unselected */
+    transition: color 0.3s ease, font-size 0.3s ease; 
+    width: 88%; /* Match original */
+}
+
+/* Hide the hover-specific content by default */
+.offers .hover-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+
+
+/*
+ * 2. THE HOVER EFFECT: Makes unselected offers look like the selected one
+ */
+.offers:hover {
+    flex: 2; /* **EXPANDS THE CARD** */
+    background-color: #010101; /* **DARK BACKGROUND** */
+    border-color: #010101; /* Makes the border blend */
+    /* Padding is already set to 28px by default now */
+}
+
+/* Change the h1 color to white and increase size when the card is hovered */
+.offers:hover h1 {
+    color: white; 
+    font-size: 32px; /* Match selected_offer h1 size */
+    width: 70%; /* Match selected_offer h1 width */
+}
+
+/* Show the hover-specific content when the card is hovered */
+.offers:hover .hover-content {
+    display: flex; /* or flex for the button container */
+    opacity: 1;
+}
+
+/* Adjust display for specific hover-content elements if needed, e.g., the button container */
+.offers:hover .flex .hover-content { /* Targeting the contact button div */
+    display: flex; /* If it's a div holding the button */
+}
+.offers:hover .flex > .hover-content { /* Targeting the image */
+    display: flex;
+}
+
+
+/*
+ * 3. STYLES for the Selected Offer
+ */
+.selected_offer {
+    flex: 2;
+    height: 50%;
+    border-radius: 32px;
+    border: 1px #999999 solid;
+    background-color: #010101;
+    /* Match the structure of offers */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensure the h1 inside the selected offer is white */
+.selected_offer h1 {
+    color: white; 
+    font-size: 32px; /* Explicitly set for selected */
+    width: 70%;
+}
+
+/* The paragraph in selected offer */
+.selected_offer p {
+    color: #999999;
+    width: 70%;
+    margin-top: 2vh;
+}
+
+
+/*
+ * 4. CONTAINER STYLES (Unchanged)
+ */
+.offers_container {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    margin: 0;
+}
+
+/* General button styling for consistency */
+.malibu { /* Assuming 'malibu' is a custom font or style you have */
+    font-size: 16px;
+    padding: 12px 32px; /* px-8 py-3 */
+    color: white;
+}
+
+.w-fit {
+    width: fit-content;
+}
+.h-fit {
+    height: fit-content;
+}
+
+/* The arrow buttons styling */
+.offers .flex .border-\[1px\] {
+    margin-left: 10px; /* Space between contact button and arrow */
+}
+/* Ensure the arrow button in the selected_offer is correctly positioned */
+.selected_offer .flex .border-\[1px\] {
+    margin-left: 10px;
+}
+
+/* Styles for the larger images at the bottom right */
+.offers img:not(.hover-content) { /* Target only the small arrow image in normal state */
+    display: none; /* Hide default arrow images in unhovered state if they conflict */
+}
+.offers:hover img.hover-content {
+    display: block; /* Show the large image on hover */
+}
+.selected_offer img {
+    display: block; /* Always show the large image in selected offer */
+}
+/* Existing Selected Offer Styles (Remains the same) */
+.selected_offer {
+    flex: 2; /* Expanded default state */
+    /* ... other styles (dark background, white text) */
+    height: 50%;
+    border-radius: 32px;
+    border: 1px #999999 solid;
+    background-color: #010101;
+    transition: flex 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* NEW CLASS: Applies the shrunken style of a regular offer */
+.deselected-by-hover {
+    flex: 1 !important; /* Forces it to shrink like a regular offer */
+    background-color: transparent !important; /* Reverts background */
+    border: 1px #999999 solid !important; /* Reverts border */
+    /* You'll also need to handle the text color change, potentially with a sibling rule */
+}
+.deselected-by-hover img{
+  display: none;
+}
+/* Ensure text turns black */
+.deselected-by-hover h1 {
+    color: black !important;
+    font-size: 20px;
+}
+/* Hide the extra content in the deselected state */
+.deselected-by-hover p,
+.deselected-by-hover .flex:not(:has(.border-\[1px\])) { 
+    display: none !important;
+}
+
+/* Existing offers:hover styles (Remains the same) */
+.offers:hover {
+    flex: 2;
+    background-color: #010101;
+    border-color: #010101;
+}
+/* ... and other hover styles for .offers ... */
+@media (min-width: 768px) and (max-width: 1000px){
+  .offers:hover .hover-content {
+    display: none; /* or flex for the button container */
+    opacity: 1;
+}
+
+/* Adjust display for specific hover-content elements if needed, e.g., the button container */
+.offers:hover .flex .hover-content { /* Targeting the contact button div */
+    display: none; /* If it's a div holding the button */
+}
+.offers:hover .flex > .hover-content { /* Targeting the image */
+    display: none;
+}
+}
+@media (min-width: 425px) and (max-width: 700px){
+  .offers_container{
+   flex-direction: column;
+  }
+  .selected_offer h1 {
+    color: white; 
+    font-size: 24px; /* Explicitly set for selected */
+    width: 70%;
+}
+  .offers:hover .hover-content {
+    display: none; /* or flex for the button container */
+    opacity: 1;
+}
+
+/* Adjust display for specific hover-content elements if needed, e.g., the button container */
+.offers:hover .flex .hover-content { /* Targeting the contact button div */
+    display: none; /* If it's a div holding the button */
+}
+.offers:hover .flex > .hover-content { /* Targeting the image */
+    display: none;
+}
+.offers:hover h1 {
+    color: white; 
+    font-size: 24px; /* Match selected_offer h1 size */
+    width: 70%; /* Match selected_offer h1 width */
+}
+}
+.autoRotate{
+  animation: AutoRotateAnimation;
+  animation-timeline:view(); 
+}
+
+@keyframes AutoRotateAnimation{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
   }
 }

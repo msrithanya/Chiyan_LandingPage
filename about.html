@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiyan</title>
+    <link rel="icon" href="Asserts/Logo.svg" >
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Malibu Sunday -->
+
+  <link href="https://db.onlinewebfonts.com/c/06981ce077f50507c144a35e8de65210?family=Malibu+Sunday+Serif" rel="stylesheet">
+  <!-- Extra font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+   <script src="script.js"></script>
+   <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .malibu {
+      font-family: "Malibu Sunday", serif;
+    }
+    .playwrite {
+      font-family: "Playwrite DE SAS", cursive;
+    }
+  </style>
+</head>
+<body class="m-0 p-0">
+<div id="customCursor"></div>
+  <!-- Navbar -->
+
+   <nav class="fixed top-4 left-8 right-8 flex items-center justify-between bg-black rounded-[42px] py-2 px-4 z-50 hidden sm:flex">
+    <a href="#home">
+      <div class="flex items-center ml-6">
+      <img src="Asserts/Logo.svg" alt="Logo" class="w-7 h-7">
+      <p class="malibu text-white text-[24px] ml-[-12px]">CHIYAN</p>
+    </div>
+    </a>
+    <div class="flex items-center mr-4 text-white/60">
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
+         <a href="index.html#about" class="malibu text-base px-4 py-2">About Us</a>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
+        <a href="index.html#service" class="malibu text-base px-4 py-2">Service</a>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
+        <a href="index.html#blogs" class="malibu text-base px-4 py-2">Blog</a>
+      </div>
+      <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
+        <a href="index.html#testimonials" class="malibu text-base px-4 py-2">Testimonials</a>
+      </div>
+      <div class="ml-3 bg-[#0745E8] rounded-[32px] cursor-pointer">
+        <a href="index.html#contact"><p class="malibu text-base px-8 py-3">Contact Us</p></a>
+      </div>
+    </div>
+  </nav> 
+  
+  <div class="absolute top-4 z-50 flex justify-between ml-[24px] mr-[24px] w-[90%] sm:hidden">
+    <img class="w-[40px]" src="Asserts/Logo.svg ">
+    <div class="pt-[8px] pb-[8px] pl-[24px] pr-[24px] bg-[#0745E8] rounded-[32px] flex justify-center items-center"><p class="text-white">Contact Us</p></div>
+  </div>
+
+  <section id="offer" class="lg:h-[100vh] h-[60vh] sm:h-[70vh] bg-w  ml-[48px] mt-[16vh] mr-[48px] relative ">
+    <div class="lg:flex  justify-between w-[100%] ">
+     <div class="mt-10 text-center sm:text-left">
+  <p class="text-[#0745E8] text-[18px] sm:text-[20px]">What We Offer</p>
+  <p class="mt-2 text-[24px] sm:text-[28px] ">Helping you grow with our services.</p>
+</div>
+    </div>
+    <!-- <div class="offers_container">
+        <div></div>
+        <div class="selected_offer  pl-[28px] pt-[28px] ">
+            <div>
+            <div>
+                 <h1 class="text-white text-[32px] w-[70%]">Innovative Solutions for Smarter Management</h1>
+        <p class="text-[#999999] w-[70%] mt-[2vh]">Innovative software products, including FinPort, our stock market management solution.</p>
+            </div>
+             
+        </div>
+          
+    <div class="flex justify-between w-[100%] items-end ">
+        <div class="flex"> <div class=" bg-[#0745E8] rounded-[32px] cursor-pointer w-fit h-fit">
+        <a href="#contact"><p class="malibu text-base px-8 py-3 text-white">Contact Us</p></a>
+      </div>
+      <div class="border-[1px] border-[#0745E8] px-[10px] flex justify-center items-center rounded-[9999999px] h-12"><img src="Asserts/ArrowLeft.svg"/></div>
+    </div>
+           
+      <img src="Asserts/offer_1.svg"/>
+        </div>
+    
+    </div>
+  <div class="offers flex flex-col justify-between pl-[28px] pt-[28px] pb-[28px]">
+            <div>
+                 <h1 class="text-black text-[20px] w-[88%]">End-to-End IT Services for Modern Businesses</h1>
+            </div>
+            <div class="flex w-[100%] items-end ">
+        
+      <div class="border-[1px] border-[#0745E8] px-[10px] flex justify-center items-center rounded-[9999999px] h-12"><img src="Asserts/dark_ArrowLeft.svg"/></div>
+    
+           
+        </div>
+    </div>
+ 
+    <div class="offers flex flex-col justify-between pl-[28px] pt-[28px] pb-[28px]">
+            <div>
+                 <h1 class="text-black text-[20px] w-[88%]">Custom Software Solutions</h1>
+            </div>
+            <div class="flex w-[100%] items-end ">
+        
+      <div class="border-[1px] border-[#0745E8] px-[10px] flex justify-center items-center rounded-[9999999px] h-12"><img src="Asserts/dark_ArrowLeft.svg"/></div>
+    
+           
+        </div>
+    </div>
+     </div> -->
+  <div class="offers_container mt-[6vh]">
+    <div class="selected_offer pl-[28px] pt-[28px] pb-[32px] lg:h-[70%] xl:h-[50%]">
+        <div>
+            <div>
+                <h1 class="text-white text-[32px] w-[70%]">Innovative Solutions for Smarter Management</h1>
+                <p class="text-[#999999] w-[70%] mt-[2vh] hidden lg:flex justify-between">Innovative software products, including FinPort, our stock market management solution.</p>
+            </div>
+        </div>
+        <div class="  w-[100%] items-end hidden lg:flex justify-between">
+        
+                <div class=" bg-[#0745E8] rounded-[32px] cursor-pointer w-fit h-[42px] flex justify-center items-center text-white">
+                    <a class=" px-8 py-[32px] " href="#contact ">Contact Us</a>
+                </div>
+
+           
+            <img src="Asserts/offer_1.svg"/>
+        </div>
+    </div>
+
+    <div class="offers flex flex-col justify-between pl-[28px] pt-[28px] pb-[28px] lg:h-[70%] xl:h-[50%]">
+        <div>
+            <h1 class="text-black text-[20px] w-[88%]">End-to-End IT Services for Modern Businesses</h1>
+            <p class="hover-content text-[#999999] w-[88%] mt-[2vh] hidden lg:flex justify-between">Comprehensive IT support, consulting, and infrastructure management services.</p>
+        </div>
+        <div class=" w-[100%] items-end hidden lg:flex justify-between">
+             <div class="hover-content bg-[#0745E8] rounded-[32px] cursor-pointer w-fit h-[42px] flex justify-center items-center text-white">
+                    <a class=" px-8 py-[32px] " href="#contact ">Contact Us</a>
+                </div>
+
+            <img class="hover-content" src="Asserts/offer_2.svg"/> </div>
+    </div>
+
+    <div class="offers flex flex-col justify-between pl-[28px] pt-[28px] pb-[28px] lg:h-[70%] xl:h-[50%]">
+        <div>
+            <h1 class="text-black text-[20px] w-[88%]">Custom Software Solutions</h1>
+            <p class="hover-content text-[#999999] w-[88%] mt-[2vh] hidden lg:flex justify-between">Tailored software development to meet your unique business needs.</p>
+        </div>
+        <div class=" w-[100%] items-end hidden lg:flex justify-between">
+             <div class="hover-content bg-[#0745E8] rounded-[32px] cursor-pointer w-fit h-[42px] flex justify-center items-center text-white">
+                    <a class=" px-8 py-[32px] " href="#contact ">Contact Us</a>
+                </div>
+
+            <img class="hover-content" src="Asserts/offer_3.svg"/> </div>
+    </div>
+</div>
+    </section>
+    <section class="m_vission bg-[#010101] xl:mt-[-12vh] xl:h-[150vh] lg:h-[120vh]  hidden lg:block relative">
+        <img class="autoRotate absolute xl:top-[38%] xl:left-[42%] lg:top-[36%] lg:left-[40%] lg:w-[200px]"  src="Asserts/wheel.svg"/>
+        <div class="flex items-center justify-center h-[100%]"> <img class="xl:h-[72%] lg:h-[64%]" src="Asserts/vision_mission.svg"/></div>
+    </section>
+    <section id="service" class="h-[80vh] bg-white ml-[48px] hidden lg:hidden md:block">
+  <section class="relative w-full h-[100%] bg-white py-20">
+    <!-- Center vertical line -->
+    <div class="absolute hidden sm:block left-1/2 top-0 h-full w-[3px] bg-gray-300 transform -translate-x-1/2"></div>
+
+    <!-- Timeline item LEFT -->
+    <div class="timeline-item flex justify-between items-start fadeUp">
+      <div class="timeline-img w-1/2 flex justify-end pr-16">
+        <h1 class="text-blue-600 text-[32px] font-bold">Vision</h1>
+      </div>
+
+      <div class="timeline-content w-1/2 pl-16">
+       
+        <p class="text-gray-600 mt-2 w-[80%]">Our Vision To be a global leader in delivering innovative and impactful software solutions that empower businesses and individuals to achieve their full potential in the digital age.</p>
+      </div>
+    </div>
+
+    <!-- Timeline item RIGHT -->
+    <div class="timeline-item flex justify-between items-start mt-[18vh] fadeUp">
+      <div class="timeline-content w-1/2 text-right pr-16">
+       
+        <p class="text-gray-600 mt-2 text-[16px] w-[80%] ml-auto">To create reliable, scalable, and secure software products and services that solve real-world challenges and enhance business efficiency.</p>
+      </div>
+
+      <div class="timeline-img w-1/2 flex justify-start pl-16">
+        <h1 class="text-blue-600 text-[32px] font-bold">Mission</h1>
+      </div>
+    </div>
+  </section>
+</section>
+ <section id="service" class="bg-white py-10 px-4 sm:hidden mt-[24vh]">
+  <div class="flex flex-col space-y-12">
+    <!-- Item 1 -->
+    <div class="flex flex-col items-center text-center fadeUp">
+      <h2 class="text-blue-600 text-[20px] font-semibold">Vision</h2>
+      <p class="text-gray-600 mt-2 text-[16px]">Our Vision To be a global leader in delivering innovative and impactful software solutions that empower businesses and individuals to achieve their full potential in the digital age.</p>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="flex flex-col items-center text-center fadeUp">
+      <h2 class="text-blue-600 text-[20px] font-semibold">Mision</h2>
+      <p class="text-gray-600 mt-2 text-[16px]">To create reliable, scalable, and secure software products and services that solve real-world challenges and enhance business efficiency</p>
+    </div>
+
+  </div>
+</section>
+<section id="contact" class="h-[180vh] sm:h-screen bg-black ">
+<div class="marquee">
+  <div class="marquee-content">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+    <img src="Asserts/getintouch.svg" alt="">
+  </div>
+</div>
+<div class="flex-col mt-[32px] sm:mt-[0] md:flex-row flex justify-between ml-[48px] mr-[48px] ">
+  <form class="flex flex-col lg:w-[40%]  lg:mt-[8vh] md:mt-[4vh] md:w-[50%]">
+  <label class="text-white text-[24px]" for="name">Name</label>
+  <input
+    class="border-b-[2px] bg-black mt-[3vh] text-white placeholder-[rgba(255,255,255,0.5)] outline-none focus:outline-none"
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Enter your name"
+  >
+  <label class="text-white text-[24px] mt-[5vh]" for="email">Email Id</label>
+  <input
+    class="border-b-[2px] bg-black mt-[3vh] text-white placeholder-[rgba(255,255,255,0.5)] outline-none focus:outline-none"
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter your email"
+  >
+  <label class="text-white text-[24px] mt-[5vh]" for="message">Message</label>
+  <textarea
+    class="border-b-[2px] bg-black mt-[3vh] text-white placeholder-[rgba(255,255,255,0.5)] outline-none focus:outline-none h-[20vh]"
+    id="message"
+    name="message"
+    placeholder="Type your message"
+  ></textarea>
+
+  <div class="bg-[#0745E8] rounded-[32px] cursor-pointer w-fit mt-[24px]">
+    <p class="malibu text-white px-8 py-3">Submit</p>
+  </div>
+</form>
+<div class="lg:w-[40%]  lg:mt-[8vh] md:mt-[4vh] sm:flex sm:justify-end sm:items-end mt-[5vh] sm:mt-[0px]">
+<div class="sm:w-[50%]">
+  <div class="mobile_design flex sm:block "><div>
+        <p class="text-[rgba(255,255,255,0.5)]">Visit Us</p>
+        <h1 class="mt-[2vh] text-white">RD Horizon, Plot No 19, Chithanapalli, Nallur, Hosur, Tamil Nadu 635126</h1>
+        </div>
+        <div class="sm:mt-[6vh]">
+        <p class="text-[rgba(255,255,255,0.5)]">Talk to Us</p>
+        <h1 class="mt-[2vh] text-white">8300362860</h1>
+        <h1 class="mt-[6px] text-white">chiyan@gmail.com</h1>
+        </div></div>
+        <div class="flex  mt-[6vh] ml-[30%] sm:ml-[0px]">
+          <a href="www.instagram.com"><img src="Asserts/insta.svg"/></a>
+           <a class="ml-[12px]" href="www.youtube.com"><img src="Asserts/Youtube.svg"/></a>
+            <a class="ml-[12px]" href="www.instagram.com"><img src="Asserts/twitter.svg"/></a>
+        </div>
+      </div>
+    </div>
+</div>
+<div class=" border-[1px] border-dashed border-[rgba(255,255,255,0.5)] xl:mt-[5vh] mt-[5vh] sm:mt-[3vh]"></div>
+<footer class=" bg-black text-white py-10 px-16 block sm:flex justify-between w-[100%]">
+  <!-- Left Section -->
+  <div class="flex flex-col xl:w-[60%] md:w-[50%] ml-[-24px] mr-[-24px] sm:ml-[0px] sm:mr-[0px]">
+    <div class="mb-4">
+      <img src="Asserts/logo.svg" alt="Logo" class="w-10 h-10">
+    </div>
+    <p class="text-sm leading-relaxed">
+      At Chiyan Software Solutions Pvt Ltd, we develop innovative and efficient products tailored to meet the evolving needs of businesses and individuals.
+      Our products are designed with scalability, ease of use, and cutting edge technology to deliver superior value.
+    </p>
+  </div>
+
+  <!-- Right Section -->
+  <div class="flex text-sm justify-between xl:w-[16%] sm:w-[24%] w-[20%] mt-[5vh] sm:mt-[0] ml-[-24px] mr-[-24px] sm:ml-[0px] sm:mr-[0px]">
+    <div class="flex flex-col  w-fit">
+      <a href="index.html#home" class="hover:text-white hover:underline w-fit text-gray-500 cursor-not-allowed">Home</a>
+      <a href="index.html#about" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">About Us</a>
+      <a href="index.html#service" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Service</a>
+      <a href="index.html#blogs" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Blog</a>
+      <a href="index.html#testimonials" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Testimonials</a>
+    </div>
+    <div class="flex flex-col ml-[2vw] w-fit">
+      <a href="#" class="hover:text-white hover:underline  w-fit text-gray-500 cursor-not-allowed">Terms</a>
+      <a href="#" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Policy</a>
+      <a href="#" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">Legal</a>
+    </div>
+  </div>
+</footer>
+<div class="  h-[2vh] flex justify-center items-center bg-blue bg-[rgba(7,69,232,1)]">
+   <p class="text-white sm:text-[16px] text-[12px]">Copyright @ 2025. Made with Love by Chiyan Software solution pvt Ltd.</p>
+  </div>
+  </section>
+  <script>
+const cursor = document.getElementById("customCursor");
+
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+const speed = 0.2; // smaller = smoother & slower follow
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animateCursor() {
+  currentX += (mouseX - currentX) * speed;
+  currentY += (mouseY - currentY) * speed;
+
+  cursor.style.transform = `translate3d(${currentX - 12}px, ${currentY - 12}px, 0)`;
+  requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+
+
+// Select all the direct children divs of the navigation items container
+const navLinks = document.querySelectorAll('a');
+
+const handleMouseEnter = () => {
+    cursor.classList.add('is-large');
+};
+
+const handleMouseLeave = () => {
+    cursor.classList.remove('is-large');
+};
+
+// Attach the listeners
+navLinks.forEach(item => {
+    item.addEventListener('mouseover', handleMouseEnter);
+    item.addEventListener('mouseout', handleMouseLeave);
+});
+
+// Cursor movement logic (updated to handle dynamic centering)
+document.addEventListener('mousemove', (e) => {
+    // Check the current size to calculate the correct offset
+    // 30px is half of the large size (60px / 2)
+    // 15px is half of the small size (30px / 2)
+    const currentOffset = cursor.classList.contains('is-large') ? 30 : 15;
+    
+    // Smoothly move the custom cursor
+    cursor.style.transform = `translate(${e.clientX - currentOffset}px, ${e.clientY - currentOffset}px)`;
+});
+  </script>
+</body>
+</html>

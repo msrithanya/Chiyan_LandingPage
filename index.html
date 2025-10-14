@@ -31,19 +31,19 @@
   </style>
 </head>
 <body class="m-0 p-0">
-<div class="cursor"></div>
+<div id="customCursor"></div>
   <!-- Navbar -->
    <div class="hand bg-black">
     <h1 class="text-[2.5vw] text-white">Scroll</h1>
 </div>
-  <nav class="fixed top-6 left-8 right-8 flex items-center justify-between bg-black rounded-[42px] py-3 px-6 z-50 hidden sm:flex">
-    <!-- Logo --><a href="#home">
+  <nav class="fixed top-4 left-8 right-8 flex items-center justify-between bg-black rounded-[42px] py-2 px-4 z-50 hidden sm:flex">
+    <a href="#home">
       <div class="flex items-center ml-6">
-      <img src="Asserts/Logo.svg" alt="Logo" class="w-6 h-6">
-      <p class="malibu text-white text-xl ml-3">CHIYAN</p>
+      <img src="Asserts/Logo.svg" alt="Logo" class="w-7 h-7">
+      <p class="malibu text-white text-[24px] ml-[-12px]">CHIYAN</p>
     </div>
     </a>
-    <div class="flex items-center mr-6 text-white/60">
+    <div class="flex items-center mr-4 text-white/60">
       <div class="ml-3 hover:border-b hover:border-[#0745E8] hover:text-white cursor-pointer hidden lg:block">
          <a href="#about" class="malibu text-base px-4 py-2">About Us</a>
       </div>
@@ -60,9 +60,9 @@
         <a href="#contact"><p class="malibu text-base px-8 py-3">Contact Us</p></a>
       </div>
     </div>
-  </nav>
+  </nav> 
   <div class="absolute top-4 z-50 flex justify-between ml-[24px] mr-[24px] w-[90%] sm:hidden">
-    <img src="Asserts/Logo.svg ">
+    <img class="w-[40px]" src="Asserts/Logo.svg ">
     <div class="pt-[8px] pb-[8px] pl-[24px] pr-[24px] bg-[#0745E8] rounded-[32px] flex justify-center items-center"><p class="text-white">Contact Us</p></div>
   </div>
 <!-- <header id="home" class="relative h-screen bg-cover bg-no-repeat" style="background-image: url('Asserts/Hero_bg.svg');">
@@ -245,7 +245,7 @@
 </header>
   <section id="about" class="lg:h-screen h-[60vh] sm:h-[70vh] bg-w hite ml-[48px] mt-[12vh] mr-[48px] relative ">
     <div class="lg:flex  justify-between w-[100%] ">
-     <div class="About_Title hidden sm:block">
+     <div class="About_Title hidden sm:block ">
       <p class="text-[#0745E8] text-[20px]">About CHIYAN</p>
       <p class="mt-[4px] text-[28px]">The Heart of Chiyan</p>
      </div>
@@ -256,7 +256,8 @@
   </div>
      <div class="lg:w-[46%] mt-[6vh] sm:mt-[8vh] lg:mt-[0]">
       <p class="text-[20px]">Chiyan Software Solutions Pvt Ltd delivers secure, scalable, and innovative software solutions. Our expert team drives impact and builds lasting client relationships through exceptional value and service.</p>
-      <div class="bw">
+      <a href="about.html">
+<div class="bw">
         <button class="blob-btn blob-btn_w text-black">
           Know More
           <span class="blob-btn__inner">
@@ -269,7 +270,6 @@
           </span>
         </button>
         <br/>
-      
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
           <filter id="goo">
@@ -280,6 +280,8 @@
         </defs>
       </svg>
     </div>
+      </a>
+      
     </div>
     </div>
     
@@ -452,40 +454,41 @@
   </div>
 </section>
 
-  <section id="blogs" class="blog h-screen bg-white md:mt-[36vh] xl:mt-[24vh]  w-[98%] relative">
-  <div id="blog_Title">
-    <p class="text-[#0745E8] text-[20px] ml-[48px]">Blogs</p>
-    <p class="mt-[4px] text-[28px] ml-[48px]">Innovative Thoughts</p>
+  <section id="blogs" class="blog h-[72vh] sm:h-[88vh] bg-white mt-[5vh] sm:mt-[36vh] xl:mt-[24vh]  w-[98%] relative">
+      <div class="About_Title hidden sm:block">
+      <p class="text-[#0745E8] text-[20px] ml-[48px]">Blogs</p>
+      <p class="mt-[4px] text-[28px] ml-[48px]">Innovative Thoughts</p>
+     </div>
+      <!-- Section Title -->
+  <div id="BLOG_Title" class="text-center mb-10 sm:hidden">
+    <p class="text-[#0745E8] text-[18px]">Blogs</p>
+    <p class="mt-2 text-[24px] font-semibold">Innovative Thoughts</p>
   </div>
+
 
   <div class="outer_wrapper md:mt-[6vh] lg:mt-[0]">
     <div class="inner"> 
-      <div class="slide lg:w-[60vw] lg:h-[80vh] md:w-[80vw]  md:h-[70vh] relative">
-        <div class="bg-black h-[6vh] absolute bottom-0 w-[100%]"></div>
+      <div class="slide lg:w-[78vw] lg:h-[70vh] md:w-[80vw]  md:h-[70vh] relative">
+         <a href="https://www.google.com">
+        <img src="Asserts/image 5.svg"/>
+      </a>
+      </div>
+      <div class="slide lg:w-[78vw] lg:h-[70vh] md:w-[80vw]  md:h-[70vh] relative">
          <a href="https://www.google.com">
         <img src="Asserts/image 2.svg"/>
       </a>
       </div>
-      <div class="slide lg:w-[60vw] lg:h-[80vh] md:w-[80vw]  md:h-[70vh]">
-         <a href="https://www.google.com">
-        <img src="Asserts/image 3.svg"/>
-      </a>
-      </div>
-        <div class="slide lg:w-[60vw] lg:h-[80vh] md:w-[80vw]  md:h-[70vh]">
-         <a href="https://www.google.com">
-        <img src="Asserts/image 2.svg"/>
-      </a>
-      </div>
-        <div class="slide lg:w-[60vw] lg:h-[80vh] md:w-[80vw]  md:h-[70vh]">
+        <div class="slide lg:w-[78vw] lg:h-[70vh] md:w-[80vw]  md:h-[70vh] relative">
          <a href="https://www.google.com">
         <img src="Asserts/image 1.svg"/>
       </a>
       </div>
-        <div class="slide lg:w-[60vw] lg:h-[80vh] md:w-[80vw]  md:h-[70vh]">
+        <div class="slide lg:w-[78vw] lg:h-[70vh] md:w-[80vw]  md:h-[70vh] relative">
          <a href="https://www.google.com">
-        <img src="Asserts/image 3.svg"/>
+        <img src="Asserts/image 5.svg"/>
       </a>
       </div>
+       
     </div>
   </div>
 </section>
@@ -539,7 +542,7 @@
     </div>
   </div>
 </section> -->
-<section id="testimonials" class="h-auto bg-white ml-[24px] mr-[24px] md:ml-[48px] md:mr-[48px] py-[4vh]">
+<section id="testimonials" class="h-auto bg-white ml-[24px] mr-[24px] mt-[5vh] sm:mt-[4vh] lg:mt-[0px] md:ml-[48px] md:mr-[48px] py-[4vh]">
   <div id="testimonials_Title" class="text-center md:text-left">
     <p class="text-[#0745E8] text-[18px] md:text-[20px]">Testimonials</p>
     <p class="mt-[4px] text-[24px] md:text-[28px] font-semibold">Client Voices</p>
@@ -584,7 +587,7 @@
     </div>
   </div>
 
-  <!-- Desktop Version (your existing layout) -->
+ <!--Desktop Version (your existing layout) -->
   <div class="hidden md:flex items-center justify-center mt-[6vh] w-[100%]">
     <div class="xl:w-[60%] lg:w-[80%] w-full">
       <div class="flex justify-between overflow-x-auto md:overflow-visible gap-6 px-2 hide-scrollbar">
@@ -732,7 +735,7 @@
 }
 </style>
 
-<section id="contact" class="h-screen bg-black mt-[20vh]">
+<section id="contact" class="h-[180vh] sm:h-screen bg-black mt-[5vh] sm:mt-[20vh]">
 <div class="marquee">
   <div class="marquee-content">
     <img src="Asserts/getintouch.svg" alt="">
@@ -743,8 +746,8 @@
     <img src="Asserts/getintouch.svg" alt="">
   </div>
 </div>
-<div class="flex justify-between">
-  <form class="flex flex-col lg:w-[40%] ml-[48px] lg:mt-[8vh] md:mt-[4vh] md:w-[50%]">
+<div class="flex-col mt-[32px] sm:mt-[0] md:flex-row flex justify-between ml-[48px] mr-[48px] ">
+  <form class="flex flex-col lg:w-[40%]  lg:mt-[8vh] md:mt-[4vh] md:w-[50%]">
   <label class="text-white text-[24px]" for="name">Name</label>
   <input
     class="border-b-[2px] bg-black mt-[3vh] text-white placeholder-[rgba(255,255,255,0.5)] outline-none focus:outline-none"
@@ -773,32 +776,29 @@
     <p class="malibu text-white px-8 py-3">Submit</p>
   </div>
 </form>
-<div class="lg:w-[40%] md:[50%] mr-[48px] lg:mt-[8vh] md:mt-[4vh] flex justify-end items-end">
-<div class="w-[50%]">
-<div>
+<div class="lg:w-[40%]  lg:mt-[8vh] md:mt-[4vh] sm:flex sm:justify-end sm:items-end mt-[5vh] sm:mt-[0px]">
+<div class="sm:w-[50%]">
+  <div class="mobile_design flex sm:block "><div>
         <p class="text-[rgba(255,255,255,0.5)]">Visit Us</p>
         <h1 class="mt-[2vh] text-white">43/8 kovil, RS Puram,Coimbatore TamilNadu 642334</h1>
         </div>
-        <div class="mt-[6vh]">
+        <div class="sm:mt-[6vh]">
         <p class="text-[rgba(255,255,255,0.5)]">Talk to Us</p>
         <h1 class="mt-[2vh] text-white">9876543210</h1>
-        <h1 class="mt-[2vh]">chiyan@gmail.com</h1>
-        </div>
-        <div  class="flex">
-          <a href="www.google.com"> <img  src="Asserts/insta.svg"/>
-         
-          <a href="www.google.com">   <img class="youtube ml-[12px]" src="Asserts/Youtube.svg"/>
-           
-               <a href="www.google.com"><img class="twitter ml-[12px]" src="Asserts/twitter.svg"/>
-           
+        <h1 class="mt-[6px] text-white">chiyan@gmail.com</h1>
+        </div></div>
+        <div class="flex  mt-[6vh] ml-[30%] sm:ml-[0px]">
+          <a href="www.instagram.com"><img src="Asserts/insta.svg"/></a>
+           <a class="ml-[12px]" href="www.youtube.com"><img src="Asserts/Youtube.svg"/></a>
+            <a class="ml-[12px]" href="www.instagram.com"><img src="Asserts/twitter.svg"/></a>
         </div>
       </div>
     </div>
 </div>
-<div class="border-[1px] border-dashed border-[rgba(255,255,255,0.5)] xl:mt-[5vh] md:mt-[3vh]"></div>
-<footer class=" bg-black text-white py-10 px-16 flex justify-between w-[100%]">
+<div class=" border-[1px] border-dashed border-[rgba(255,255,255,0.5)] xl:mt-[5vh] mt-[5vh] sm:mt-[3vh]"></div>
+<footer class=" bg-black text-white py-10 px-16 block sm:flex justify-between w-[100%]">
   <!-- Left Section -->
-  <div class="flex flex-col xl:w-[60%] md:w-[50%]">
+  <div class="flex flex-col xl:w-[60%] md:w-[50%] ml-[-24px] mr-[-24px] sm:ml-[0px] sm:mr-[0px]">
     <div class="mb-4">
       <img src="Asserts/logo.svg" alt="Logo" class="w-10 h-10">
     </div>
@@ -809,7 +809,7 @@
   </div>
 
   <!-- Right Section -->
-  <div class="flex text-sm justify-between xl:w-[16%] md:w-[24%]">
+  <div class="flex text-sm justify-between xl:w-[16%] sm:w-[24%] w-[20%] mt-[5vh] sm:mt-[0] ml-[-24px] mr-[-24px] sm:ml-[0px] sm:mr-[0px]">
     <div class="flex flex-col  w-fit">
       <a href="#home" class="hover:text-white hover:underline w-fit text-gray-500 cursor-not-allowed">Home</a>
       <a href="#about" class="hover:text-white hover:underline mt-[12px] w-fit text-gray-500 cursor-not-allowed">About Us</a>
@@ -824,57 +824,77 @@
     </div>
   </div>
 </footer>
-<div class="h-[2vh] flex justify-center items-center bg-blue bg-[rgba(7,69,232,1)]">
-   <p class="text-white">Copyright @ 2025. Made with Love by Chiyan Software solution pvt Ltd.</p>
+<div class="  h-[2vh] flex justify-center items-center bg-blue bg-[rgba(7,69,232,1)]">
+   <p class="text-white sm:text-[16px] text-[12px]">Copyright @ 2025. Made with Love by Chiyan Software solution pvt Ltd.</p>
   </div>
   </section>
 <script>
-   gsap.set('.cursor',{xPercent:-50, yPercent: -50})
+  // Set up GSAP
+gsap.set("#customCursor", { xPercent: -50, yPercent: -50 });
 
-    let cursor = document.querySelector('.cursor')
-    let hand = document.querySelector('.hand')
-    let title = document.querySelector('.outer_wrapper')
+const cursor = document.querySelector("#customCursor");
+const hand = document.querySelector(".hand");
+// const title = document.querySelector(".outer_wrapper"); // optional, only if exists
 
-    let mouseX;
-    let mouseY;
+let mouseX = 0;
+let mouseY = 0;
 
-    window.addEventListener('mousemove', e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+// Animate cursor smoothly
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 
-        gsap.to(cursor, 0.5, {x: mouseX, y:mouseY})
-    })
+  gsap.to(cursor, { x: mouseX, y: mouseY, duration: 0.2, ease: "power2.out" });
+});
 
-    title.addEventListener('mouseenter', () => {
-        gsap.to(hand, 1, {
-            scale: 1,
-            opacity: 1,
-            top: '-75px',
-            left: '-75px',
-            rotate: 0,
-            ease: Elastic.easeOut.config(1, 0.3)
-        })
-    })
+// Hover enlarge effect for links
+const navLinks = document.querySelectorAll("a");
 
-    title.addEventListener('mousemove', () => {
-        gsap.to(hand, 1, {
-            x: mouseX,
-            y: mouseY
-        })
-    })
+navLinks.forEach((link) => {
+  link.addEventListener("mouseenter", () => cursor.classList.add("is-large"));
+  link.addEventListener("mouseleave", () => cursor.classList.remove("is-large"));
+});
 
-    title.addEventListener('mouseleave', () => {
-        gsap.to(hand, 0.2, {
-            scale: 0,
-            opacity: 0,
-            top: '10',
-            left: '40',
-            rotate: 45,
-        })
-    })
+// Optional “hand” animation (only if .outer_wrapper exists)
+const title = document.querySelector(".outer_wrapper");
+if (title) {
+  title.addEventListener("mouseenter", () => {
+    gsap.to(hand, {
+      scale: 1,
+      opacity: 1,
+      top: "-75px",
+      left: "-75px",
+      rotate: 0,
+      ease: "elastic.out(1, 0.3)",
+      duration: 1,
+    });
+  });
+
+  title.addEventListener("mousemove", () => {
+    gsap.to(hand, { x: mouseX, y: mouseY, duration: 0.3 });
+  });
+
+  title.addEventListener("mouseleave", () => {
+    gsap.to(hand, {
+      scale: 0,
+      opacity: 0,
+      top: "10",
+      left: "40",
+      rotate: 45,
+      duration: 0.2,
+    });
+  });
+}
+
+
+
+
+// Select all the direct children divs of the navigation items container
+
 </script>
 
 </body>
 </html>
 
 
+'   '
