@@ -605,7 +605,6 @@ body {
   }
   .offers:hover .hover-content {
     display: none;
-    opacity: 1;
   }
   .offers:hover .flex .hover-content {
     display: none;
